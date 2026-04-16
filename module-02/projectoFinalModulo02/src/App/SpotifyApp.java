@@ -35,15 +35,15 @@ do {
         System.out.println("Usuario o contraseña incorrectos. Intentos restantes: " + (3 - intentos));
     }
 
-} while (!cuenta1.sesionIniciada && intentos < 3);
+} while (!cuenta1.getSesionIniciada() && intentos < 3);
 
-if (!cuenta1.sesionIniciada) {
+if (!cuenta1.getSesionIniciada()) {
     System.out.println("Demasiados intentos fallidos.Cuenta Bloqueada.");
     scanner.close();
     return;
 }            
       
-        while (cuenta1.sesionIniciada==true) {
+        while (cuenta1.getSesionIniciada()==true) {
            System.out.println("------------------------------------------------------");
             System.out.println("¡Sesion Iniciada! Bienvenido "+cuenta1.getUsuario());
             System.out.println("------------------------------------------------------");

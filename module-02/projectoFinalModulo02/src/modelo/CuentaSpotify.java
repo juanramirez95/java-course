@@ -5,7 +5,7 @@ private String usuario;
 private String password;
 private Playlist[] playlists;
 private BibliotecaMusical biblioteca;
-public boolean sesionIniciada;
+private boolean sesionIniciada;
 private int contadorPlaylists;
 private boolean reproducir = false;
 
@@ -48,7 +48,7 @@ public void setReproducir(boolean reproducir) {
 
 
 
-public void setSesionIniciada(boolean sesionIniciada) {
+private void setSesionIniciada(boolean sesionIniciada) {
     this.sesionIniciada = sesionIniciada;
 }
 
@@ -60,7 +60,7 @@ public void setSesionIniciada(boolean sesionIniciada) {
  * @return
  */
 public boolean iniciarSesion(String usuario, String password) { 
-    sesionIniciada = usuario.equals(this.usuario)&& password.equals(this.password);
+     setSesionIniciada(usuario.equals(this.usuario)&& password.equals(this.password)); 
     return sesionIniciada;
 }
 
@@ -114,13 +114,13 @@ public void agregarCancionAPlaylist(int indexNombre, int index){
  */
 
 //----------------------------------------------------------------------------------
-public Playlist listarCancionesPlaylist(int index){ //Lista las canciones que estan en la playlist
+public void listarCancionesPlaylist(int index){ //Lista las canciones que estan en la playlist
     
     Playlist p = getPlaylistPorIndice(index);
     System.out.printf("""
     .:Playlist: %s%n""",p.getNombre());
      p.listarCanciones();
-     return null;
+     
 }
 //----------------------------------------------------------------------------------
 
@@ -146,7 +146,7 @@ public void detener(){
 }
 
 public void cerrarSesion(){
-    sesionIniciada = false;
+    setSesionIniciada( false);
 }
 
 
@@ -160,11 +160,11 @@ private String listarPlaylists(){
 }
 
 public void listarPlaylistUsusario(){
-    if(listarPlaylists()==null || listarPlaylists().isEmpty()){
+    var playlist = listarPlaylists();
+    if(playlist==null || playlist.isEmpty()){
         System.out.println("Lista de Playlist vacia, agrega una playlist");
-    } else{System.out.println(listarPlaylists());};
-    
-    
+    } else{
+        System.out.println(playlist);};
 }
 
 

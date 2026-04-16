@@ -29,9 +29,5 @@ public void setDuracionSegundos(int duracionSegundos) {
 
 public abstract String getInfo();
 
-// Compatibilidad con tu código previo (no rompe llamadas existentes)
-public String getinfo() {
-    return getInfo();
-}
 
 }

@@ -3,8 +3,8 @@ package modelo;
 public class BibliotecaMusical {
 
 private Cancion[] catalogo;
-int contadorCatalogo;
-int maxCatalogo;
+private int contadorCatalogo;
+private int maxCatalogo;
 //Constructor 
 
 public BibliotecaMusical(){
