@@ -4,28 +4,38 @@ public class Cancion extends Multimedia implements IReproducible {
     
     private String artista;
 
-    public Cancion(String titulo, int duracionSegundos, String artista) {
+    public Cancion(String titulo, String artista, int duracionSegundos) {
         super(titulo, duracionSegundos);
         this.artista = artista;
     }
 
+    
+    
     @Override
     public void reproducir() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'reproducir'");
+        System.out.printf("Reproduciendo: %s (%d seg.), artista: %s%n",getTitulo().toUpperCase(),getDuracionSegundos(),getArtista().toUpperCase());
     }
 
     @Override
     public void detener() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'detener'");
+     System.out.println("Se detiene la canción: "+getTitulo());
     }
 
     @Override
-    public String getinfo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getinfo'");
+    public String getInfo() {
+        return "Cancion: "+getTitulo().toUpperCase()+" Artista: "+getArtista().toUpperCase()+" Duración en segundos: "+getDuracionSegundos();
     }
+
+    public String getArtista() {
+        return artista;
+    }
+
+    @Override
+    public String toString() {
+        return "Cancion: " + titulo.toUpperCase() + ", Artista: " + artista.toUpperCase() + ", Duración: " + duracionSegundos + " segundos";
+    }
+
+    
     
 
 }

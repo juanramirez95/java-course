@@ -1,8 +1,8 @@
 package modelo;
 
 public abstract class Multimedia {
-private String titulo;
-private int duracionSegundos;
+protected String titulo;
+protected int duracionSegundos;
 
 //Constructor
 public Multimedia(String titulo, int duracionSegundos) {
@@ -27,6 +27,11 @@ public void setDuracionSegundos(int duracionSegundos) {
     this.duracionSegundos = duracionSegundos;
 }
 
-public abstract String getinfo();
+public abstract String getInfo();
+
+// Compatibilidad con tu código previo (no rompe llamadas existentes)
+public String getinfo() {
+    return getInfo();
+}
 
 }
