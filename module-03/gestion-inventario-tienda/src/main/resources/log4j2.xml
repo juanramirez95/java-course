@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-    <Properties>
+   
+    <Properties>    Son variables que se pueden reutilizar en todo el archivo. Evita repetir el mismo texto muchas veces
         <Property name="LOG_PATTERN">
             %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
         </Property>
-        <Property name="LOG_PATH">logs</Property>
+        <Property name="LOG_PATH">logs</Property>  Carpeta donde se Guardan los Logs
     </Properties>
 
     <Appenders>
@@ -20,17 +21,26 @@
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
                 <!-- Rota cuando el archivo llega a 10MB -->
-                <SizeBasedTriggeringPolicy size="10 MB"/>
+                <SizeBasedTriggeringPolicy size="1 MB"/>
             </Policies>
             <!-- Cuántos archivos rotados conservar antes de borrar los más viejos -->
             <DefaultRolloverStrategy max="10"/>
-        </RollingFile>
+        </RollingFile>       
     </Appenders>
 
     <Loggers>
-        <Root level="info">
+
+        <Root level="info"> Logger por defecto para los logs que no tienen un logger especifico
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="FileLogger"/>
+            <!-- <AppenderRef ref="FileLogger"/> -->
         </Root>
+
+        <Logger name= "com.juan.ejercicio"  level="WARN" additivity="false">
+            <AppenderRef ref="FileLogger"/>
+
+        </Logger>
+
     </Loggers>
+
+
 </Configuration>
