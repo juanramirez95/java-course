@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <RollingFile name="MainLogger"
+                     fileName="logs/main/main.log"
+                     filePattern="logs/main/main-%d{yyyy-MM-dd-HH-mm-ss}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+
+        <RollingFile name="ServiceLogger"
+                     fileName="logs/service/service.log"
+                     filePattern="logs/service/service-%d{yyyy-MM-dd-HH-mm-ss}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+
+        <RollingFile name="ExceptionLogger"
+                     fileName="logs/exceptions/exceptions.log"
+                     filePattern="logs/exceptions/exceptions-%d{yyyy-MM-dd-HH-mm-ss}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.modulo03.manejoexcepciones.Main" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MainLogger"/>
+        </Logger>
+
+        <Logger name="com.modulo03.manejoexcepciones.service" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ServiceLogger"/>
+        </Logger>
+
+        <Logger name="com.modulo03.manejoexcepciones.exceptions" level="warn" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ExceptionLogger"/>
+        </Logger>
+
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
