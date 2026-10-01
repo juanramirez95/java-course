@@ -38,3 +38,7 @@ Construir una aplicación web, desplegable en computador o celular que permita h
 
 En una API simulada se utiliza JSONPlaceholder, que es una API REST online que devuelve datos ficticios en formato JSON. 
 Esto facilita el levantamiento de un backkend simulado con CRUDS no persistentes(los datos se reinician al recargar). Omitir el uso de esta API rest es un riesgo ya que vende la idea de que el programa cuenta con endpoints persistentes y un backend montado. 
+
+
+Diagrama de Flujo:
+![alt text](<Diagrama de flujo Consulta de Solicitudes RedManos.png>)
