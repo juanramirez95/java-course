@@ -43,3 +43,15 @@ Esto facilita el levantamiento de un backkend simulado con CRUDS no persistentes
 ### **Diagrama de Flujo:**
 
 ![Diagrama de flujo de solicitudes](images/diagrama-flujo.png)
+
+
+### **Página Responsive en diferentes tamaños**
+
+**Navegador web:**
+![Desktop web application interface with a dark blue sidebar on the left, a RedManos logo and user icon at the top, and the text Hola, RedManos. Three blue navigation buttons are labeled Inicio, Solicitudes, and Líderes. The main content area is a large light gray canvas with no visible content, creating a clean empty dashboard layout.](images/tamaño_NavegadorWeb.png)
+
+**Tamaño 390x1280:**
+![Mobile phone mockup showing the RedManos app interface in portrait format. At the top left, a menu icon sits beside the RedManos logo and the word RedManos, with a circular user icon at the top right. The main screen area is a large light gray panel with no visible content. The phone is centered on a dark gray background, and a simple bottom navigation area with interface icons appears near the lower edge. The overall mood is clean, minimal, and professional, suitable for a responsive dashboard for community request management.](images/inicio_390x1280.png)
+
+**Tamaño 390x1280 menu desplegado:**
+![RedManos mobile app interface in a narrow portrait layout with a dark blue sidebar, a left-side menu, and a large light gray content area. At the top of the sidebar, the RedManos logo and a circular user icon are visible. The app displays the greeting Hola, RedManos with three blue navigation buttons labeled Inicio, Solicitudes, and Líderes. The design is clean, minimal, and professional, set on a dark gray background that simulates a mobile device frame. Visible text includes RedManos, Hola, RedManos, Inicio, Solicitudes, and Líderes.](images/390x1280.png)
