@@ -1,0 +1,188 @@
+/*Barra vertical*/
+.barra{
+    margin-top: 3rem;
+    width: 8rem;
+    height: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 100; /*Permite que se muestre sobre todos los elementos de la pagina web*/
+    padding: 1.1rem ;
+    overflow-y: auto; /* sistema determina si agrega o no scroll, dependiendo del tamaño de la página y el contenido*/
+    transition: 0.5s ease;
+}
+
+.barra.menu-toggle{
+    width: 18.75rem;
+    
+}
+
+.marca{
+    font-weight: 700;
+    font-size: 1.2rem;
+
+}
+
+
+.barra-link{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 0.9rem 0.7rem;
+    margin: 0 0.5;
+    border-radius: 6px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.barra-link img{
+    width: 2.5rem;
+}
+
+.btn-primario{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    justify-content: flex-start;
+    padding: 14px 16px;
+
+}
+.btn-primario:hover{
+
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+
+.main-wrapper{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Barra horizontal*/
+header{
+    border: 2px solid red;
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 2rem 0.45rem 1.27rem;
+    border-color: var(---color-bordes);
+    position: fixed;                        /* Mantiene la posición de la barra en la parte superior cuando se hace scroll*/
+    background-color: var(--color-superficie);
+    top:0;
+    left: 0;
+
+}
+.left{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+}
+
+.menu-container{
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.menu{
+
+    width: 1.5rem;
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.2s ease;
+}
+
+.menu.menu-toggle div:first-child{
+    width: 40%;
+    transform: rotate(-35deg) translate(-20%,105%);
+}
+
+.menu.menu-toggle div:last-child{
+    width: 40%;
+    transform: rotate(35deg) translate(-20%,-105%);
+}
+
+.menu div{
+    width: 100%;
+    height: 0.15rem;
+    background-color: var(--color-menu);
+}
+
+.menu:hover{
+    transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+
+
+.brand{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.brand .logo{
+    width: 1.7rem;
+    ;
+}
+.brand .name{
+
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--texto-principal);
+
+}
+.right{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+
+}
+
+.right .user{
+    width: 2.1rem;
+    border-radius: 100%;
+}
+
+.right .user:hover{
+    transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.brand .logo{
+    width: 1.7rem;
+}
+
+/* Responsive*/
+@media(max-width:500px){
+    .barra{
+        width: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: 0.3s ease;
+    }
+    .barra.menu-toggle{
+        width: 10rem;
+        padding: 1rem;
+        .barra-link .icon-header{
+            display: none;
+        }
+        
+    }
+}

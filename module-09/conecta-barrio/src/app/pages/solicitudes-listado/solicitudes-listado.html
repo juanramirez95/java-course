@@ -1,0 +1,18 @@
+<h1 class="titulo-pagina"> Listado de consultas</h1>
+
+<div class="grid">
+@for (s of solicitudes; track s.id) {
+    <a [routerLink]="['/solisolicitudes,s.id']" class="card-link">
+        <app-solicitud-card
+          [title] ="s.title"
+          [userId]="s.userId"
+          [body]="s.body"
+          [id]="s.id">
+          
+        </app-solicitud-card>
+    </a>
+}
+
+</div>
+
+
