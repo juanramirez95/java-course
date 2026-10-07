@@ -47,6 +47,10 @@ Esto facilita el levantamiento de un backkend simulado con CRUDS no persistentes
 
 ### **Página Responsive en diferentes tamaños**
 
+La barra lateral se inicializa cerrada, al hacer clic en el icono del menu, se despliega hacia la derecha mostrando los botones de "inicio", Solicitudes","lideres". 
+
+Cuando el ancho de la pantalla es 500 o menos, el comportamiento de la barra cambia. Primero, la visibilidad de la barra desaparece, mostrando una pantalla limpia, solo conservando la barra horizontal que se mantiene visible cuando se hace scroll. Segundo, al desplegar el menu vertical, los iconos de los botones desaparecen y solo se muestran los nombres.
+
 **Navegador web:**
 ![Desktop web application interface with a dark blue sidebar on the left, a RedManos logo and user icon at the top, and the text Hola, RedManos. Three blue navigation buttons are labeled Inicio, Solicitudes, and Líderes. The main content area is a large light gray canvas with no visible content, creating a clean empty dashboard layout.](images/tamaño_NavegadorWeb.png)
 
