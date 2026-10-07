@@ -1,1 +1,26 @@
-<p>solicitud-detalle works!</p>
+@if (solicitud) {
+    <section class="detalle">
+        <header class="Encabezado">
+            <h1 class="detalle-asunto">{{solicitud.title}}</h1>
+            <p class="detalle-descripcion"><strong>Descripción: </strong> {{solicitud.body}}</p>
+        </header>
+
+        <div class="body"> 
+            <div class="datos-extra">
+            <p class="detalle-lider"><strong>Lider: </strong>{{solicitud.userId}}</p>
+            <time class="detalle-fecha"><strong>Fecha de creación: </strong>{{solicitud.fechaCreacion}}</time>
+        </div>
+         <button class="btn-secundario">marcar como prioridad</button>
+         <a routerLink="/solicitudes" class="btn-secundario">volver a listado</a>
+         
+
+
+        </div>
+        
+        
+
+
+    </section>
+} @else {
+    <p class="sin-resultado">No se encontró la solicitud.</p>
+}

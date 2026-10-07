@@ -6,7 +6,7 @@ La organización social RedManos, apoya la participación de los lideres comunit
 
 ## **- Objetivo**
 
-Construir una aplicación web, desplegable en computador o celular que permita hacer consultas de solicitudes comunitarias y de los lideres comunitarios.
+Construir una aplicación web, desplegable en computador o celular que permita recibir,priorizar, gestionar y hacer consultas de solicitudes comunitarias y de los lideres comunitarios.
 
 
 ### **- Usuario Principal:** Coordinador de la organización RedManos

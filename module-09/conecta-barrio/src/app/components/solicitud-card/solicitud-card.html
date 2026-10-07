@@ -3,7 +3,9 @@
   <h4> Id: {{id}}</h4>
   <h2> Asunto: {{ title}}</h2>
   <p>Lider a cargo: {{ userId }}</p>
-  <button class="btn-primario">Prioridad</button>
-  <p>Prioridad: {{prioridad}}</p>
+  <button class="btn-secundario">Prioridad</button>
+  <time [attr.datetime]="fechaCreacion | date:'yyyy-MM-dd'">{{ fechaCreacion | date:'dd/MM/yyyy' }}</time>
+
+  <!-- <p>Prioridad: {{prioridad}}</p> -->
   
 </div>

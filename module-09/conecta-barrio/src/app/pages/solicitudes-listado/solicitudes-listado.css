@@ -1,20 +1,45 @@
-.titulo-pagina{
-    color: var(--color-fondo-principal);
-    margin-bottom: 24px;
+/* Título de página */
+.titulo-pagina {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primario);
+    margin: 2rem 0 1.5rem;
+    text-align: center;
 }
 
-.grid{
+/* Grid contenedor */
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240, 1fr));
-    gap: 24px
-}
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: transform 0.2s ease;
+    grid-template-columns: auto;
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
+/* Enlace que envuelve cada card */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: block;
+}
+
+/* Efecto hover en la card */
 .card-link:hover {
-  transform: translateY(-4px);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Ajuste de la card dentro del grid */
+app-solicitud-card {
+    display: block;
+    background-color: var(--color-superficie);
+    border: 1px solid var(---color-bordes);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover visual dentro de la card */
+.card-link:hover app-solicitud-card {
+    background-color: var(--status-process-bg);
 }

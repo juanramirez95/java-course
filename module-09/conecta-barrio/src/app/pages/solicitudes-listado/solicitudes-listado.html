@@ -2,12 +2,13 @@
 
 <div class="grid">
 @for (s of solicitudes; track s.id) {
-    <a [routerLink]="['/solisolicitudes,s.id']" class="card-link">
+    <a [routerLink]="['/solicitudes',s.id]" class="card-link">
         <app-solicitud-card
           [title] ="s.title"
           [userId]="s.userId"
           [body]="s.body"
-          [id]="s.id">
+          [id]="s.id"
+          [fechaCreacion]="s.fechaCreacion">
           
         </app-solicitud-card>
     </a>

@@ -71,25 +71,24 @@ body{
     border-radius: 6px;
     font-weight: 500;
     cursor: pointer;
+    text-decoration: none;
     transition: background-color 0.2s ease;
     }
-.btn-primario,a{
-    text-decoration: none;  /* elimina el subrayado a los links*/
-}
+
 
 .btn-primario:hover{
     background-color: var(--primario-hover);
-    text-decoration: none;
 }
 
 .btn-secundario{
     background-color: transparent;
-    color: var(--texto-principal);
     border: 1px solid var(---color-bordes);
     padding: 0.5rem 1rem;
     border-radius: 6px;
-    font-weight: 500;
     cursor: pointer;
+    text-decoration: none;
 }
+
+
 
 

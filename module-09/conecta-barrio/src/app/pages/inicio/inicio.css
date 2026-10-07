@@ -1,0 +1,42 @@
+/* Hero Section */
+.hero {
+    background-color: var(--color-superficie);
+    color: var(--texto-principal);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.hero-titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primario);
+}
+
+.hero-texxto {
+    font-size: 1.125rem;
+    color: var(--texto-secundario);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Botón dentro del hero */
+.hero .btn-primario {
+    background-color: var(--primario);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.hero .btn-primario:hover {
+    background-color: var(--primario-hover);
+}

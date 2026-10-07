@@ -12,7 +12,6 @@ export class App {
   protected nombreMVP = 'RedManos'
   sidebarVisible=false;
   
-
   toggleSideBar(){
     this.sidebarVisible = !this.sidebarVisible; /** Binding que permite deplegar el contenido del Menu */
   }

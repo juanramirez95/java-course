@@ -3,4 +3,6 @@ export class solicitud{
     userId!: number;
     title!: string;
     body!: string;
+    fechaCreacion!: Date;
+    
 }

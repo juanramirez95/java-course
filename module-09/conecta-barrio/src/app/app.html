@@ -27,18 +27,20 @@
  </header>
 
  <aside class ="barra" id="sidebar" [class.menu-toggle]="sidebarVisible">
-      <span class="marca">
+      <span class="marca" [class.menu-toggle]="sidebarVisible">
       <h1>Hola, {{ nombreMVP }}</h1>
     </span>
       <div class="barra-link">
 
       <a routerLink="/" class="btn-primario"> <img src="assets/inicio.svg" alt="inicio" class="icon-header">Inicio</a>
       <a routerLink="/solicitudes" class="btn-primario"> <img src="assets/list-solicitudes.svg" alt="lista de solicitudes"class="icon-header" >Solicitudes</a>
+      <a routerLink="/solicitudes/nueva" class="btn-primario"><img src="assets/solicitud.svg" alt="icono de nueva solicitud" class="icon-header">Nueva solicitud</a>
       <a routerLink="/lideres" class="btn-primario"><img src="assets/users.svg" alt="lista de lideres" class="icon-header">Lideres</a>
+
     </div>
     </aside>
 
-<main class="main">
+<main class="main" [class.menu-toggle]="sidebarVisible">
   <router-outlet />      
 </main>
 
