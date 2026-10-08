@@ -1,16 +1,22 @@
-@if (solicitud) {
+@if (solicitud(); as s) {
     <section class="detalle">
         <header class="Encabezado">
-            <h1 class="detalle-asunto">{{solicitud.title}}</h1>
-            <p class="detalle-descripcion"><strong>Descripción: </strong> {{solicitud.body}}</p>
+            <h1 class="detalle-asunto">{{s.title}}</h1>
+            <p class="detalle-descripcion"><strong>Descripción: </strong> {{s.body}}</p>
         </header>
 
         <div class="body"> 
             <div class="datos-extra">
-            <p class="detalle-lider"><strong>Lider: </strong>{{solicitud.userId}}</p>
-            <time class="detalle-fecha"><strong>Fecha de creación: </strong>{{solicitud.fechaCreacion}}</time>
+            <p class="detalle-lider"><strong>Lider: </strong>{{s.userId}}</p>
+            <time class="detalle-fecha"><strong>Fecha de creación: </strong>{{s.fechaCreacion}}</time>
         </div>
-         <button class="btn-secundario">marcar como prioridad</button>
+         <button 
+            class="btn-secundario"
+            type="button"
+            [attr.aria-pressed]="esPrioritario()"
+            [attr.aria-label]="esPrioritario()? 'Quitar de Prioritarios' : 'Agregar a Prioritarios'"
+            (click)="alternarPrioritario()"><span [class.activo]="esPrioritario()">Prioridad</span>
+         </button> 
          <a routerLink="/solicitudes" class="btn-secundario">volver a listado</a>
          
 

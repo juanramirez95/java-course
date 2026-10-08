@@ -1,49 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, signal,computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SolicitudCard } from '../../components/solicitud-card/solicitud-card';
+import { SolicitudesService } from '../../services/solicitudes.service';
+
 @Component({
   selector: 'app-solicitudes-listado',
   imports: [RouterLink,SolicitudCard],
   templateUrl: './solicitudes-listado.html',
   styleUrl: './solicitudes-listado.css',
 })
+
+
 export class SolicitudesListado {
-  solicitudes = [
-  {
-    id: 1,
-    userId: "Esteban",
-    title: "Apoyo escolar",
-    body: "Asistir la salida de buses al final de la jornada escolar",
-    fechaCreacion: "10/7/2026"
-  },
-  {
-    id:2,
-    userId: "María",
-    title: "Jornada de limpieza",
-    body: "Organizar voluntarios para limpiar el parque central",
-    fechaCreacion: "10/7/2026"
-  },
-  {
-    id:3,
-    userId: "Carlos",
-    title: "Reunión comunitaria",
-    body: "Convocar a los vecinos para discutir mejoras en seguridad",
-    fechaCreacion: "10/7/2026"
-  },
-  {
-    id:4,
-    userId: "Lucía",
-    title: "Huerta comunitaria",
-    body: "Coordinar la siembra de hortalizas en el lote comunal",
-    fechaCreacion: "10/7/2026"
-  },
-  {
-    id:5,
-    userId: "Andrés",
-    title: "Clases de deporte",
-    body: "Promover actividades deportivas para niños y jóvenes",
-    fechaCreacion: "10/7/2026"
+
+  private solicitudesService = inject(SolicitudesService)
+
+  solicitudes = this.solicitudesService.solicitudes;
+
+  busqueda = signal('');  //este buscador pertenece solo a listado, filtrará en cada tecla, sin boton y sin recarga
+  
+  solicitudesFiltradas = computed(()=>  //modifica su valor a partir de otras signals y se recalcula cuando camnia alguna dependencia
+  this.solicitudes().filter(s=>
+    s.title.toLowerCase().includes(this.busqueda().toLowerCase())
+  ));
+
+  esPrioritario(id:number){
+    return this.solicitudesService.esPrioritario(id);
   }
-  ]
+
+  alternarPrioritario(id:number){
+    return this.solicitudesService.alternarPrioritario(id);
+  }
 
 }

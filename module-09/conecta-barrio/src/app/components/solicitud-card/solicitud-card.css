@@ -14,10 +14,12 @@
 }
 
 .btn-secundario:hover{
-color: var(--acentado-hover);
+color: var(--status-urgent);
 transform: translateY(-2px);
 box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
 
+.btn-secundario .prioridad{
   
-  
+  transform: scale(1.15);
 }

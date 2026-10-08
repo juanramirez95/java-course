@@ -43,3 +43,53 @@ app-solicitud-card {
 .card-link:hover app-solicitud-card {
     background-color: var(--status-process-bg);
 }
+
+
+/*Buscador*/
+
+/* Campo de búsqueda */
+.buscador {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(---color-bordes);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--texto-principal);
+    background-color: var(--color-superficie);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto al enfocar */
+.buscador:focus {
+    outline: none;
+    border-color: var(--primario);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); /* azul suave */
+}
+
+/* Mensaje cuando no hay resultados */
+.sin-resultado {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--status-urgent);
+    background-color: var(--status-urgent-bg);
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.identificador{
+    display: flex;
+    align-items: center;
+    
+    gap: 10.5rem;
+    margin: 0 1rem;
+    padding: 0 1rem;
+}
+
+.identificador h4 {
+    margin: 0;
+}
+

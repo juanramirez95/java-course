@@ -1,9 +1,15 @@
 <div class="card">
   
   <h4> Id: {{id}}</h4>
-  <h2> Asunto: {{ title}}</h2>
+  <h2> {{ title}}</h2>
   <p>Lider a cargo: {{ userId }}</p>
-  <button class="btn-secundario">Prioridad</button>
+  <button 
+      class="btn-secundario"
+      type="button"
+      [attr.aria-pressed]="esPrioritario"
+      [attr.aria-label]="esPrioritario? 'Quitar de Prioritarios' : 'Agregar a Prioritarios'"
+      (click)="alClicPrioritario($event)"><span [class.activo]="esPrioritario"  class="prioridad">Prioridad</span>
+  </button>
   <time [attr.datetime]="fechaCreacion | date:'yyyy-MM-dd'">{{ fechaCreacion | date:'dd/MM/yyyy' }}</time>
 
   <!-- <p>Prioridad: {{prioridad}}</p> -->

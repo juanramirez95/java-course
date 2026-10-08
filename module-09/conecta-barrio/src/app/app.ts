@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { SolicitudesService } from './services/solicitudes.service';
 
 
 @Component({
@@ -9,6 +10,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
+  private solicitudesService = inject(SolicitudesService);
+  totalFavoritos = this.solicitudesService.totalPrioritarios;
+  
   protected nombreMVP = 'RedManos'
   sidebarVisible=false;
   

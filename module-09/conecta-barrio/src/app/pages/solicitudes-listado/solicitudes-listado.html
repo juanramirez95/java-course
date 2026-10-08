@@ -1,17 +1,38 @@
+
 <h1 class="titulo-pagina"> Listado de consultas</h1>
 
+<input 
+    #inputBusqueda 
+    type="text"
+    class="buscador"
+    placeholder="Buscar solicitudes por asunto..."
+    (input)="busqueda.set(inputBusqueda.value)"/>
+     
+
 <div class="grid">
-@for (s of solicitudes; track s.id) {
+    <div class="identificador">
+    <h4>Id</h4>
+    <h4>Asunto</h4>
+    <h4>Lider Comunitario</h4>
+    <h4>Estado</h4>
+    <h4>Fecha Creación</h4>
+</div>
+@for (s of solicitudesFiltradas(); track s.id) {
     <a [routerLink]="['/solicitudes',s.id]" class="card-link">
         <app-solicitud-card
           [title] ="s.title"
           [userId]="s.userId"
           [body]="s.body"
           [id]="s.id"
-          [fechaCreacion]="s.fechaCreacion">
+          [fechaCreacion]="s.fechaCreacion"
+          [esPrioritario]="esPrioritario(s.id)"
+          (prioritarioCambiado)="alternarPrioritario(s.id)">
+
           
         </app-solicitud-card>
     </a>
+}@empty {
+    <p class="sin-resultado"> No se encontraron Solicitudes bajo este Asunto.</p>
 }
 
 </div>

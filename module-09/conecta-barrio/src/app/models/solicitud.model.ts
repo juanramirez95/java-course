@@ -1,8 +1,8 @@
-export class solicitud{
-    id!: number;
-    userId!: number;
-    title!: string;
-    body!: string;
-    fechaCreacion!: Date;
+export interface Solicitud{
+    id: number;
+    userId: number;
+    title: string;
+    body: string;
+    fechaCreacion: Date;
     
 }
