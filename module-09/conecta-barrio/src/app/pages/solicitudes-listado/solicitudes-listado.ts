@@ -18,11 +18,18 @@ export class SolicitudesListado {
   solicitudes = this.solicitudesService.solicitudes;
 
   busqueda = signal('');  //este buscador pertenece solo a listado, filtrará en cada tecla, sin boton y sin recarga
-  
-  solicitudesFiltradas = computed(()=>  //modifica su valor a partir de otras signals y se recalcula cuando camnia alguna dependencia
-  this.solicitudes().filter(s=>
-    s.title.toLowerCase().includes(this.busqueda().toLowerCase())
-  ));
+  busquedaLider = signal('');
+
+  solicitudesFiltradas = computed(() => {
+    const asunto = this.busqueda().toLowerCase();
+    const lider = this.busquedaLider().toLowerCase();
+
+    return this.solicitudes().filter(s =>
+      s.title.toLowerCase().includes(asunto) ||
+      s.userId.toLowerCase().includes(lider)
+    );
+  });
+
 
   esPrioritario(id:number){
     return this.solicitudesService.esPrioritario(id);
