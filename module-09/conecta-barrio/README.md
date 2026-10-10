@@ -66,7 +66,7 @@ Cuando el ancho de la pantalla es 500 o menos, el comportamiento de la barra cam
 
 ## Campos de la solicitud
 
-| Campo (API) | Nombre en UI | Comportamiento |
+| Campo (API) | Etiqueta visible | Comportamiento |
 |:------------|:-------------|:---------------|
 | `title`  | Asunto | Ancho máximo de `30ch`. Si el texto excede ese límite, se oculta el sobrante. |
 | `body`   | Descripción | No aparece en el listado. Se delimita a `30ch` por línea y hace salto de línea. |
@@ -80,3 +80,13 @@ Cuando el ancho de la pantalla es 500 o menos, el comportamiento de la barra cam
 | Cargando | Mensaje "Cargando datos del Asunto" |
 | Error | Mensaje "No se pudo cargar los datos" |
 | Con datos, pero el id no aparece | "No existe una solicitud con ese id"|
+
+
+## Campos de Líder
+
+| Campo (API) | Comportamiento |
+|:------------|:-------------|:---------------|
+| `name` | Nombre | Aparece como líder relacionado en las solicitudes y en el listado de líderes. |
+| `email` | Email | Se muestra como dato de contacto. |
+| `phone` | Teléfono | Se muestra como dato de contacto. |
+| `address.city` | Barrio | Se muestra como dato de contacto. |
