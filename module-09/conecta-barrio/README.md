@@ -59,3 +59,26 @@ Cuando el ancho de la pantalla es 500 o menos, el comportamiento de la barra cam
 
 **Tamaño 390x1280 menu desplegado:**
 ![RedManos mobile app interface in a narrow portrait layout with a dark blue sidebar, a left-side menu, and a large light gray content area. At the top of the sidebar, the RedManos logo and a circular user icon are visible. The app displays the greeting Hola, RedManos with three blue navigation buttons labeled Inicio, Solicitudes, and Líderes. The design is clean, minimal, and professional, set on a dark gray background that simulates a mobile device frame. Visible text includes RedManos, Hola, RedManos, Inicio, Solicitudes, and Líderes.](images/390x1280.png)
+
+
+### **Matriz de Traducción**
+
+
+## Campos de la solicitud
+
+| Campo (API) | Nombre en UI | Comportamiento |
+|:------------|:-------------|:---------------|
+| `title`  | Asunto | Ancho máximo de `30ch`. Si el texto excede ese límite, se oculta el sobrante. |
+| `body`   | Descripción | No aparece en el listado. Se delimita a `30ch` por línea y hace salto de línea. |
+| `userId` | Líder relacionado | Se usan dos `signals`: una con los datos de las solicitudes y otra con los datos de los líderes. Un `computed` recibe por URL el id de la solicitud, la busca y luego obtiene el líder relacionado a partir de su `userId`. |
+| `id`     | Caso # | Maneja el estado de carga del caso (ver tabla siguiente). |
+
+## Estados de carga del caso
+
+| Estado | Qué se muestra |
+|:-------|:---------------|
+| Cargando | Mensaje "Cargando datos del Asunto" |
+| Error | Mensaje "No se pudo cargar los datos" |
+| Vacío | Mensaje indicando que no hay solicitudes |
+| Con datos, pero el id no aparece | "No existe una solicitud con ese id" y un botón para salir |
+| Con datos y el id aparece | El detalle de la solicitud |
