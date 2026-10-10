@@ -84,7 +84,7 @@ Cuando el ancho de la pantalla es 500 o menos, el comportamiento de la barra cam
 
 ## Campos de Líder
 
-| Campo (API) | Comportamiento |
+| Campo (API) | Etiqueta visible|Comportamiento |
 |:------------|:-------------|:---------------|
 | `name` | Nombre | Aparece como líder relacionado en las solicitudes y en el listado de líderes. |
 | `email` | Email | Se muestra como dato de contacto. |
