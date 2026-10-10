@@ -79,6 +79,4 @@ Cuando el ancho de la pantalla es 500 o menos, el comportamiento de la barra cam
 |:-------|:---------------|
 | Cargando | Mensaje "Cargando datos del Asunto" |
 | Error | Mensaje "No se pudo cargar los datos" |
-| Vacío | Mensaje indicando que no hay solicitudes |
-| Con datos, pero el id no aparece | "No existe una solicitud con ese id" y un botón para salir |
-| Con datos y el id aparece | El detalle de la solicitud |
+| Con datos, pero el id no aparece | "No existe una solicitud con ese id"|
