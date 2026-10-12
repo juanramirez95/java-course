@@ -10,7 +10,7 @@ import { DatePipe } from '@angular/common';
 })
 export class SolicitudCard {
   @Input() id=0;
-  @Input() userId ='';
+  @Input() userName ='';
   @Input()title ='';
   @Input() prioridad='';
   @Input() body='';

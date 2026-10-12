@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, output, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LideresService } from '../../services/lideres.service'
+
 
 @Component({
   selector: 'app-lideres-listado',
@@ -7,4 +9,22 @@ import { RouterLink } from '@angular/router';
   templateUrl: './lideres-listado.html',
   styleUrl: './lideres-listado.css',
 })
-export class LideresListado {}
+export class LideresListado {
+
+  private liderService = inject(LideresService)
+
+  lideres = this.liderService.lideres;
+
+  busquedaLider = signal('');
+
+  lideresFiltrados = computed(() =>
+    
+    this.lideres().filter( l =>
+      l.name.toLocaleLowerCase().includes(
+        this.busquedaLider().toLowerCase())
+    )
+  );
+
+  
+  
+}

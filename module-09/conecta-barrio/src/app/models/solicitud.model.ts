@@ -1,4 +1,4 @@
-export interface Solicitud{
+interface Solicitud{
     id: number;
     userId: number;
     title: string;

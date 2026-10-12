@@ -19,6 +19,9 @@
 
     <div class="right">
 
+      @if (totalPrioritarios()>0) {
+        <span class="badge">Solicitudes Prioritarias:  {{totalPrioritarios()}}</span>
+      }
       <a href="#">
         <img src="assets/user-logo.svg" alt="user" class="user">
       </a>
@@ -30,15 +33,18 @@
       <span class="marca" [class.menu-toggle]="sidebarVisible">
       <h1>Hola, {{ nombreMVP }}</h1>
     </span>
+
       <div class="barra-link">
 
       <a routerLink="/" class="btn-primario"> <img src="assets/inicio.svg" alt="inicio" class="icon-header">Inicio</a>
       <a routerLink="/solicitudes" class="btn-primario"> <img src="assets/list-solicitudes.svg" alt="lista de solicitudes"class="icon-header" >Solicitudes</a>
       <a routerLink="/solicitudes/nueva" class="btn-primario"><img src="assets/solicitud.svg" alt="icono de nueva solicitud" class="icon-header">Nueva solicitud</a>
       <a routerLink="/lideres" class="btn-primario"><img src="assets/users.svg" alt="lista de lideres" class="icon-header">Lideres</a>
+      <button class="btn-primario"><img src="assets/log-out.svg" alt="" class="icon-header">Cerrar sesión</button>
+      
 
     </div>
-    </aside>
+  </aside>
 
 <main class="main" [class.menu-toggle]="sidebarVisible">
   <router-outlet />      

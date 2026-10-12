@@ -63,6 +63,7 @@ main.menu-toggle{
     width: 2.5rem;
 }
 
+
 .btn-primario{
     display: flex;
     align-items: center;
@@ -190,15 +191,32 @@ header{
     width: 1.7rem;
 }
 
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  margin-left: 6px;
+  border-radius: 999px;
+  background: #e0446f;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
 /* Responsive*/
 @media(max-width:500px){
     .barra{
+        
         width: 0;
         overflow: hidden;
         padding: 0;
         transition: 0.3s ease;
     }
     .barra.menu-toggle{
+        
         width: 10rem;
         padding: 1rem;
         .barra-link .icon-header{
@@ -206,4 +224,5 @@ header{
         }
         
     }
+
 }

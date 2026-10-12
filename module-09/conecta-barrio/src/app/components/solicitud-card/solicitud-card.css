@@ -11,15 +11,25 @@
 .card p,
 .card h2{
   margin: 0;
+  max-width: 30ch;        /* ancho máximo */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn-secundario:hover{
-color: var(--status-urgent);
+color: var(--primario);
 transform: translateY(-2px);
 box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
-.btn-secundario .prioridad{
-  
+.btn-secundario .prioridad:focus-visible{
+  outline: 3px solid var(--primario);
+  outline-offset: 2px;
+}
+
+.btn-secundario .prioridad.activo{
+  color: #ff3700;
   transform: scale(1.15);
+  background-color: var(--urgent-bg);
 }

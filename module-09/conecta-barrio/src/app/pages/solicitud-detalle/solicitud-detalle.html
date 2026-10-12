@@ -4,18 +4,25 @@
             <h1 class="detalle-asunto">{{s.title}}</h1>
             <p class="detalle-descripcion"><strong>Descripción: </strong> {{s.body}}</p>
         </header>
-
+    
         <div class="body"> 
             <div class="datos-extra">
-            <p class="detalle-lider"><strong>Lider: </strong>{{s.userId}}</p>
-            <time class="detalle-fecha"><strong>Fecha de creación: </strong>{{s.fechaCreacion}}</time>
+        @if (lideresFiltrados(); as l) {
+            <p class="detalle-lider"><strong>Lider: </strong>{{l.name}}</p>
+        }@else {
+            <p class="sin-resultado">Lider no Encontrado.</p>
+        }
+            
+            <time class="detalle-fecha"><strong>Fecha de creación: </strong>{{s.fechaCreacion | date: 'dd-MM-yyyy'}}</time>
+    
+            
         </div>
          <button 
             class="btn-secundario"
             type="button"
             [attr.aria-pressed]="esPrioritario()"
             [attr.aria-label]="esPrioritario()? 'Quitar de Prioritarios' : 'Agregar a Prioritarios'"
-            (click)="alternarPrioritario()"><span [class.activo]="esPrioritario()">Prioridad</span>
+            (click)="alternarPrioritario()"><span [class.activo]="esPrioritario()" class="prioridad">Prioridad</span>
          </button> 
          <a routerLink="/solicitudes" class="btn-secundario">volver a listado</a>
          

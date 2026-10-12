@@ -1,1 +1,23 @@
-<p>lideres-listado works!</p>
+<h1 class="titulo-pagina">Listado de Líderes</h1>
+
+
+
+
+<div class="grid">
+  <input 
+    #inputBusqueda 
+    type="text"
+    class="buscador"
+    placeholder="Buscar Lider por nombre"
+    (input)="busquedaLider.set(inputBusqueda.value)"/>
+  @for (l of lideresFiltrados(); track l.id) {
+      <div class="card">
+        <h2 class="card-titulo">{{ l.name }}</h2>
+        <p class="card-detalle"><strong>Email:</strong> {{ l.email }}</p>
+        <p class="card-detalle"><strong>Teléfono:</strong> {{ l.phone }}</p>
+        <p class="card-detalle"><strong>Ciudad:</strong> {{ l.addressCity }}</p>
+      </div>
+  } @empty {
+    <p class="sin-resultado"> No se encontraron Lideres registrados bajo esta busqueda.</p>
+  }
+</div>

@@ -9,14 +9,17 @@
 
 /* Grid contenedor */
 .grid {
+    
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns:auto;
+    align-items: center;
     gap: 1.5rem;
     padding: 1rem;
 }
 
 /* Enlace que envuelve cada card */
 .card-link {
+    
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -80,11 +83,10 @@ app-solicitud-card {
     font-weight: 500;
 }
 
-.identificador{
+.grid .identificador{
     display: flex;
-    align-items: center;
-    
-    gap: 10.5rem;
+    flex-direction: row;
+    justify-content: space-between;
     margin: 0 1rem;
     padding: 0 1rem;
 }

@@ -2,6 +2,7 @@ import { Component, signal,computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SolicitudCard } from '../../components/solicitud-card/solicitud-card';
 import { SolicitudesService } from '../../services/solicitudes.service';
+import { LideresService } from '../../services/lideres.service';
 
 @Component({
   selector: 'app-solicitudes-listado',
@@ -14,22 +15,24 @@ import { SolicitudesService } from '../../services/solicitudes.service';
 export class SolicitudesListado {
 
   private solicitudesService = inject(SolicitudesService)
+  private liderService = inject(LideresService)
 
   solicitudes = this.solicitudesService.solicitudes;
+  lideres = this.liderService.lideres;
 
   busqueda = signal('');  //este buscador pertenece solo a listado, filtrará en cada tecla, sin boton y sin recarga
-  busquedaLider = signal('');
+  busquedaBody = signal('');
 
-  solicitudesFiltradas = computed(() => {
+
+  solicitudesFiltradas = computed(() => {    // El computed puede buscar en solicitudes-lista ya sea por asunto 
     const asunto = this.busqueda().toLowerCase();
-    const lider = this.busquedaLider().toLowerCase();
+    const descripcion = this.busquedaBody().toLowerCase();
 
     return this.solicitudes().filter(s =>
-      s.title.toLowerCase().includes(asunto) ||
-      s.userId.toLowerCase().includes(lider)
+      s.title.toLowerCase().includes(asunto)||
+      s.body.toLowerCase().includes(descripcion)
     );
   });
-
 
   esPrioritario(id:number){
     return this.solicitudesService.esPrioritario(id);
