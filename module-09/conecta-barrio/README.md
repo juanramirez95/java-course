@@ -70,7 +70,7 @@ Cuando el ancho de la pantalla es 500 o menos, el comportamiento de la barra cam
 |:------------|:-------------|:---------------|
 | `title`  | Asunto | Ancho máximo de `30ch`. Si el texto excede ese límite, se oculta el sobrante. |
 | `body`   | Descripción | No aparece en el listado. Se delimita a `30ch` por línea y hace salto de línea. |
-| `userId` | userId es un campo de la solicitud y corresponde al id del líder comunitario. Se deriva del computed solicitud. Con ese valor se busca en la lista de líderes el líder relacionado y se muestra su nombre. Si la solicitud o el líder no existen, el valor queda vacío.  |
+| `userId` | Lider relacionado | userId es un campo de la solicitud y corresponde al id del líder comunitario. Se deriva del computed solicitud. Con ese valor se busca en la lista de líderes el líder relacionado y se muestra su nombre. Si la solicitud o el líder no existen, el valor queda vacío.  |
 | `id`     | Caso # | Maneja el estado de carga del caso (ver tabla siguiente). |
 
 ## Estados de carga del caso
