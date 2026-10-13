@@ -90,3 +90,11 @@ Cuando el ancho de la pantalla es 500 o menos, el comportamiento de la barra cam
 | `email` | Email | Se muestra como dato de contacto. |
 | `phone` | Teléfono | Se muestra como dato de contacto. |
 | `address.city` | Barrio | Se muestra como dato de contacto. |
+
+### **Página de inicio reactiva**
+
+## **Tablero de Inicio**##
+![Panel de inicio de ConectaBarrio en un navegador. En la barra superior aparecen un icono de regreso, el logotipo ConectaBarrio y un icono de usuario. La barra lateral azul oscuro muestra Hola, ConectaBarrio y los botones Inicio, Solicitudes, Nueva solicitud, Lideres y Cerrar sesión. En el área principal se lee Bienvenido a ConectaBarrio y El sistema que puede gestionar solicitudes y consultas de las comunidades de su ciudad. Más abajo, un texto explica que se pueden gestionar solicitudes existentes, priorizar las más importantes, registrar nuevas y consultar datos de contacto de líderes comunitarios. Otra tarjeta ofrece Registrar una nueva solicitud y Lista de Lideres. Dos indicadores muestran Total de Solicitudes, 8, con el botón Ver, y Solicitudes prioritarias, 0, también con el botón Ver. La interfaz clara, ordenada y en tonos azul y blanco transmite un tono acogedor y profesional.](images/Pagina-Inicio.png)
+
+## **Tablero de Inicio conectado al estado**##
+![Panel de inicio de ConectaBarrio conectado y abierto en localhost:4200. En la parte superior aparecen el logotipo ConectaBarrio, el indicador Solicitudes Prioritarias: 3 y un icono de usuario. La barra lateral azul oscuro muestra Hola, ConectaBarrio y los botones Inicio, Solicitudes, Nueva solicitud, Lideres y Cerrar sesión. En el área principal se lee Bienvenido a ConectaBarrio y El sistema que puede gestionar solicitudes y consultas de las comunidades de su ciudad. Una tarjeta explica que se puede gestionar solicitudes, priorizarlas, registrar nuevas y consultar datos de líderes comunitarios. Otra ofrece los botones Registrar una nueva solicitud y Lista de Lideres. Dos tarjetas indican Total de Solicitudes: 8 y Solicitudes prioritarias: 3, ambas con un botón Ver. La interfaz despejada, de fondo claro y detalles azules, transmite un tono profesional y acogedor.](images/Pagina-inicio-conectado.png)

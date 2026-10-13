@@ -12,10 +12,6 @@ export const routes: Routes = [
       loadComponent: () => 
          import('./pages/solicitudes-listado/solicitudes-listado').then(s => s.SolicitudesListado)
    },
-   {path:'solicitudes/:id',
-      loadComponent:() =>
-         import('./pages/solicitud-detalle/solicitud-detalle').then(s=>s.SolicitudDetalle)
-   },
    {path:'solicitudes/nueva',
       loadComponent:() =>
          import('./pages/solicitud-nueva/solicitud-nueva').then(s => s.SolicitudNueva)
@@ -23,6 +19,15 @@ export const routes: Routes = [
    {path:'lideres',
       loadComponent:() =>
          import('./pages/lideres-listado/lideres-listado').then(s=>s.LideresListado)
+   },
+  {
+   path: 'solicitudes/prioritarias',
+      loadComponent:() =>
+         import('./pages/solicitudes-prioritario/solicitudes-prioritario').then(s=>s.SolicitudesPrioritario)
+   },
+   {path:'solicitudes/:id',
+      loadComponent:() =>
+         import('./pages/solicitud-detalle/solicitud-detalle').then(s=>s.SolicitudDetalle)
    },
     {
     path: '**',

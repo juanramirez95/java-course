@@ -1,4 +1,4 @@
-import {Injectable, signal,computed} from '@angular/core';
+import {Injectable, signal,computed,effect} from '@angular/core';
 
 
 export interface Solicitud{
@@ -64,13 +64,40 @@ export class SolicitudesService{
         title: "Clases de deporte",
         body: "Promover actividades deportivas para niños y jóvenes",
         fechaCreacion: new Date('2026-10-07')
-      } 
+      },
+      {
+        id:7,
+        userId: 3,
+        title: "Clases de deporte",
+        body: "Promover actividades deportivas para niños y jóvenes",
+        fechaCreacion: new Date('2026-10-07')
+      },
+      {
+        id:9,
+        userId: 1,
+        title: "Organizar sesion de recolecta de basura",
+        body: "Promover actividades deportivas para niños y jóvenes",
+        fechaCreacion: new Date('2026-10-07')
+      }  
     ]);
+    
+      private idsPrioritarios = signal<Set<number>>(new Set());  // lista de ids que estan marcados como prioritarios.
+
+    
+
+      constructor() {
+        effect(() => {
+          const idsActuales = [...this.idsPrioritarios()];
+          localStorage.setItem('redmanos-prioritarios', JSON.stringify(idsActuales));
+        });
+        }
 
     solicitudes = this.listaSolicitudes.asReadonly();  // lee listaSolicitudes que es un signal de la lista
-      private idsPrioritarios = signal<Set<number>>(new Set());
+    asuntosMarcados = this.idsPrioritarios.asReadonly(); // lee la lista de los id que están marcados como prioritarios.
 
-      totalPrioritarios = computed(() => this.idsPrioritarios().size);
+
+    totalPrioritarios = computed(() => this.idsPrioritarios().size); //devuelve la cantidad de solicitudes que estan marcadas como prioritarias
+
 
       esPrioritario(id:number):boolean{
           return this.idsPrioritarios().has(id);
@@ -88,6 +115,5 @@ export class SolicitudesService{
       });
     }
 
-    
 
 }

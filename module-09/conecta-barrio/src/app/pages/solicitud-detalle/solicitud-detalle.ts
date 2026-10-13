@@ -1,5 +1,5 @@
 import { Component, computed, inject, Input } from '@angular/core';
-import { mapToCanActivateChild, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { SolicitudesService } from '../../services/solicitudes.service';
 import { LideresService } from '../../services/lideres.service';
 import { DatePipe } from '@angular/common';

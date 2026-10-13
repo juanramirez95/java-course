@@ -13,7 +13,7 @@ export class App {
   private solicitudesService = inject(SolicitudesService);
   totalPrioritarios = this.solicitudesService.totalPrioritarios;
   
-  protected nombreMVP = 'RedManos'
+  protected nombreMVP = 'ConectaBarrio'
   sidebarVisible=false;
   
   toggleSideBar(){

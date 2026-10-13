@@ -1,0 +1,44 @@
+/* Contenedor grid para las tarjetas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Enlace que envuelve cada tarjeta */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Tarjeta de solicitud */
+app-solicitud-card {
+  display: block;
+  background-color: var(--color-superficie);
+  border: 1px solid var(---color-bordes);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover visual para destacar las prioritarias */
+.card-link:hover app-solicitud-card {
+  background-color: var(--status-urgent-bg);
+  border-color: var(--status-urgent);
+}
+
+/* Mensaje sin resultado */
+.sin-resultado {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--status-urgent);
+  margin-top: 2rem;
+}

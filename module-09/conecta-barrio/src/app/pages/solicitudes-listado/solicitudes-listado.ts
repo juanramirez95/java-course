@@ -15,10 +15,10 @@ import { LideresService } from '../../services/lideres.service';
 export class SolicitudesListado {
 
   private solicitudesService = inject(SolicitudesService)
-  private liderService = inject(LideresService)
+  
 
   solicitudes = this.solicitudesService.solicitudes;
-  lideres = this.liderService.lideres;
+  
 
   busqueda = signal('');  //este buscador pertenece solo a listado, filtrará en cada tecla, sin boton y sin recarga
   busquedaBody = signal('');
@@ -41,5 +41,4 @@ export class SolicitudesListado {
   alternarPrioritario(id:number){
     return this.solicitudesService.alternarPrioritario(id);
   }
-
 }

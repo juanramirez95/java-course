@@ -1,7 +1,55 @@
-<section class="hero">
-    <h1 class="hero-titulo">Bienvenido a RedManos</h1>
+
+
+<h1 class="hero-titulo">Bienvenido a ConectaBarrio</h1>
+<body>
+    <section class="hero">
+    
     <p class="hero-texxto">
-        Bienvenido al sistema que puede gestionar solicitudes y consultas de las comunidades de su ciudad.
+         El sistema que puede gestionar solicitudes y consultas de las comunidades de su ciudad.
     </p>
-    <a routerLink="/solicitudes" class="btn-primario">Ver Solicitudes</a>
 </section>
+
+<section class="panel">
+
+    <section id= "tarjetas" class="instrucciones">
+        <p>En ConectaBarrio puedes utilizar la barra de navegación 
+            lateral para gestionar solicitudes existentes, priorizar
+             aquellas más importantes o registrar nuevas. Además, tendrás 
+             acceso al listado de líderes comunitarios registrados 
+             y podrás consultar fácilmente sus datos de contacto.
+        </p>
+
+    </section>
+
+    <section id= "tarjetas" class="acciones">
+            <a routerLink="/solicitudes/nueva" class="btn-primario"> Registrar una nueva solicitud </a>
+            <a routerLink="/lideres" class="btn-primario">Lista de Lideres</a>
+    </section>
+
+    <section id= "tarjetas" class="indicadores-solicitudes">
+    <article class="indicador">
+     
+      <p class="indicador-titulo"> Total de Solicitudes</p>
+      <p class="indicador-valor">{{ solicitudesTotales() }}</p>
+       <a routerLink="/solicitudes" class="ver-solicitud">Ver</a>
+    </article>
+
+    <article class="indicador">
+      <p class="indicador-titulo">Solicitudes prioritarias</p>
+      <p class="indicador-valor">{{ totalPrioritarios()}}</p>
+       <a routerLink="/solicitudes/prioritarias" class="ver-solicitud">Ver</a>
+    </article>
+    </section>
+
+    <!-- <section id= "tarjetas" class="indicador-prioritario">
+            <a routerLink="/solicitudes" class="btn-primario">Ver Solicitudes</a>
+            <a routerLink="/solicitudes/nueva" class="btn-primario">Registrar una nueva solicitud</a>
+    </section> -->
+
+
+
+
+        
+
+</section>    
+</body>

@@ -10,11 +10,17 @@
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+#tarjetas:hover{
+     transform: translateY(-3px);
+     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
 .hero-titulo {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    max-width: 800px;
+    margin: 2rem auto 1rem;
     color: var(--primario);
+    text-align: center;
 }
 
 .hero-texxto {
@@ -23,9 +29,128 @@
     margin-bottom: 2rem;
     line-height: 1.6;
 }
+.panel{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.50rem;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+@media (max-width: 700px) {
+    .panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+.instrucciones{
+    
+     display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--color-superficie);
+    color: var(--texto-principal);
+    padding: 4rem 2rem;
+    text-align: left;
+    line-height: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 32ch;
+    overflow-wrap: break-word;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+.indicadores-solicitudes{
+     background-color: var(--color-superficie);
+    color: var(--texto-principal);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.indicadores-solicitudes .indicador{
+  background-color: var(--color-superficie);
+  border: 1px solid var(---color-bordes);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 1rem;
+  flex: 1;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+ .ver-solicitud {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primario);
+  border: 1px solid var(--primario);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.ver-solicitud:hover {
+  background-color: var(--primario);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.indicadores-solicitudes .indicador-titulo {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--texto-secundario);
+  margin-bottom: 0.5rem;
+}
+.indicadores-solicitudes .indicador:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+.indicadores-solicitudes .indicador-valor {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primario);
+  margin: 0;
+}
+
+.acciones{
+     display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--color-superficie);
+    color: var(--texto-principal);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 500px;
+    max-height: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+
+.indicador-prioritario{
+    border: 2px solid purple;
+     background-color: var(--color-superficie);
+    color: var(--texto-principal);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
 /* Botón dentro del hero */
-.hero .btn-primario {
+.acciones .btn-primario {
     background-color: var(--primario);
     color: #ffffff;
     border: none;
@@ -35,8 +160,9 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
     text-decoration: none;
+    display: block;
 }
 
-.hero .btn-primario:hover {
+.acciones .btn-primario:hover {
     background-color: var(--primario-hover);
 }
