@@ -234,23 +234,23 @@ La MVP presenta gran variedad de limitaciones:
 
 Para el desarrollo de este proyecto se utilizaron dos inteligencias artificiales: Copilot y Claude. Cada una tuvo una participación significativa y uso diferente. 
         
-        1. **Copilot:** se utilizó para el diseño CSS general del MVP. "styles.css" si lo diseñe yo, en donde establecí colores de layout y estructua, acciones y destacados, tipografía, estados de solicitudes y  estructura básica de los btn-primario/secundario y su hover respectivo. Con base al "styles.css" le pedía que diseñara los archivos css de cada página. 
+ 1. **Copilot:** se utilizó para el diseño CSS general del MVP. "styles.css" si lo diseñe yo, en donde establecí colores de layout y estructua, acciones y destacados, tipografía, estados de solicitudes y  estructura básica de los btn-primario/secundario y su hover respectivo. Con base al "styles.css" le pedía que diseñara los archivos css de cada página. 
 
-            ![Captura de una conversación sobre estilos CSS. La persona pide dame el css manteniendo coherencia con styles.css aplicando estilos a las reglas de input del selector. La respuesta ofrece una plantilla CSS para un formulario de registro de nueva solicitud, coherente con styles.css y extendiendo las reglas de input al select. En el bloque de código se leen /* Contenedor principal */, .registro {, background-color: var(--color-superficie);, border: 1px solid var(--color-bordes); y border-radius: 8px;} . La conversación aparece en una interfaz clara y ordenada, con un tono instructivo y colaborativo.]   (images/IA-estilos.png)
+![Captura de una conversación sobre estilos CSS. La persona pide dame el css manteniendo coherencia con styles.css aplicando estilos a las reglas de input del selector. La respuesta ofrece una plantilla CSS para un formulario de registro de nueva solicitud, coherente con styles.css y extendiendo las reglas de input al select. En el bloque de código se leen /* Contenedor principal */, .registro {, background-color: var(--color-superficie);, border: 1px solid var(--color-bordes); y border-radius: 8px;} . La conversación aparece en una interfaz clara y ordenada, con un tono instructivo y colaborativo.]   (images/IA-estilos.png)
 
 
-        2. **Claude:** Claude fue la inteigencia artifical principal, pues en ella se creo un proyecto bajo el nombre de "ConectaBarrio", se le dio la instrucción de actuar como un consultor y no debía de generar código. Las interacciones se basaron en consultas de como implementar funciones, explicación de conceptos, asistencia para desarrollo de los signals y components. Tambien se utilizó para la redacción del README y validación de coherencia y requisitos solicituados en el taller.
+2. **Claude:** Claude fue la inteigencia artifical principal, pues en ella se creo un proyecto bajo el nombre de "ConectaBarrio", se le dio la instrucción de actuar como un consultor y no debía de generar código. Las interacciones se basaron en consultas de como implementar funciones, explicación de conceptos, asistencia para desarrollo de los signals y components. Tambien se utilizó para la redacción del README y validación de coherencia y requisitos solicituados en el taller.
 
-            **vista general del proyecto ConectaBarrio**
-            ![](images/IA-Claude-Proyecto.png)
+**vista general del proyecto ConectaBarrio**
+![](images/IA-Claude-Proyecto.png)
 
-            **Instrucciones del Proyecto**
-            ![](images/IA-instrucciones.png)
+ **Instrucciones del Proyecto**
+![](images/IA-instrucciones.png)
 
-            **Consultas**
-            ![](images/IA-consultas.png)
+**Consultas**
+![](images/IA-consultas.png)
         
 ### **Reflexión del uso de la IA**
 
-    Hacer uso de la inteligencia artificial es una habilidad que hay que saber utilizar. Decidí hacer uso de la IA para consultar "el por que" de las cosas y cúal es el propósito de cada elemento en el proyecto. Tuve momentos en los que me frustré porque no sabía como implementar método, fue un reto el poder relacionar el nombre del lider con cada solicitud. Facilmente le pude haber pedido que desarrollara el código y lo pegaba en el MVP; pero decidí dejarme guíar, leer sus retroalimentaciones y despues de cada fallo, volver a hacerlo. La sastisfacción que tuve cuando lo logré no me la quita es nadie. Aprender a utilizar la IA es entender que uno es el que piensa y la guía a ella. 
+Hacer uso de la inteligencia artificial es una habilidad que hay que saber utilizar. Decidí hacer uso de la IA para consultar "el por que" de las cosas y cúal es el propósito de cada elemento en el proyecto. Tuve momentos en los que me frustré porque no sabía como implementar método, fue un reto el poder relacionar el nombre del lider con cada solicitud. Facilmente le pude haber pedido que desarrollara el código y lo pegaba en el MVP; pero decidí dejarme guíar, leer sus retroalimentaciones y despues de cada fallo, volver a hacerlo. La sastisfacción que tuve cuando lo logré no me la quita es nadie. Aprender a utilizar la IA es entender que uno es el que piensa y la guía a ella. 
 
