@@ -1,10 +1,10 @@
 import { Component,Input, output } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { DatePipe, SlicePipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-solicitud-card',
-  imports: [DatePipe],
+  imports: [DatePipe, SlicePipe],
   templateUrl: './solicitud-card.html',
   styleUrl: './solicitud-card.css',
 })
@@ -14,7 +14,9 @@ export class SolicitudCard {
   @Input()title ='';
   @Input() prioridad='';
   @Input() body='';
+  @Input() maxDescriptionLength: number | null = null;
   @Input() fechaCreacion: Date | string= '';
+  @Input() mostrarFecha = true;
   @Input() esPrioritario = false;
 
 
@@ -26,5 +28,3 @@ export class SolicitudCard {
     this.prioritarioCambiado.emit(); //Dispara el evento para que quien esccha reaccione. 
   }
 }
-
-

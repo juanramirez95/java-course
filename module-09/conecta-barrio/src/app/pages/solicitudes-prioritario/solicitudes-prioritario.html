@@ -1,20 +1,25 @@
 
+<h1 class="titulo-pagina"> Solicitudes prioritario</h1>
+<div class="listado-prioritarias">
+  <div class="identificador">
+    <h4>Caso #</h4>
+    <h4>Asunto</h4>
+    <h4>Descripción</h4>
+    <h4>Prioridad</h4>
+  </div>
 
-@for (s of asuntosPrioritarios(); track s.id) {
-    
-
-
-    <a [routerLink]="['/solicitudes/prioritarias',s.id]" class="card-link">
+  @for (s of asuntosPrioritarios(); track s.id) {
+    <a [routerLink]="['/solicitudes/',s.id]" class="card-link">
         <app-solicitud-card
+          class="solicitud-card-prioritario"
           [title] ="s.title"
           [body]="s.body"
           [id]="s.id"
-          [fechaCreacion]="s.fechaCreacion"
           [esPrioritario]="esPrioritario(s.id)"
           (prioritarioCambiado)="alternarPrioritario(s.id)">
         </app-solicitud-card>
-
     </a>
-}@empty {
+  } @empty {
     <p class="sin-resultado"> Aún no hay Solicitudes Prioritarias.</p>
-}
+  }
+</div>

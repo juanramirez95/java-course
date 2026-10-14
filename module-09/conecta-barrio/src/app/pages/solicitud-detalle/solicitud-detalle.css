@@ -92,6 +92,27 @@
   transform: scale(1.15);
 }
 
+.sin-resultado {
+  background-color: var(--status-urgent-bg);
+  border: 1px solid var(--status-urgent);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--status-urgent);
+  
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#boton-error:hover{
+  
+  background-color: var(--status-process-bg);
+}
+
 
 
 

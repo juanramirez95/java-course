@@ -42,6 +42,8 @@ Esto facilita el levantamiento de un backkend simulado con CRUDS no persistentes
 
 ### **Diagrama de Flujo:**
 
+### **Técnologías Utilizadas**
+
 ![Diagrama de flujo de solicitudes](images/diagrama-flujo.png)
 
 
@@ -98,3 +100,16 @@ Cuando el ancho de la pantalla es 500 o menos, el comportamiento de la barra cam
 
 ## **Tablero de Inicio conectado al estado**##
 ![Panel de inicio de ConectaBarrio conectado y abierto en localhost:4200. En la parte superior aparecen el logotipo ConectaBarrio, el indicador Solicitudes Prioritarias: 3 y un icono de usuario. La barra lateral azul oscuro muestra Hola, ConectaBarrio y los botones Inicio, Solicitudes, Nueva solicitud, Lideres y Cerrar sesión. En el área principal se lee Bienvenido a ConectaBarrio y El sistema que puede gestionar solicitudes y consultas de las comunidades de su ciudad. Una tarjeta explica que se puede gestionar solicitudes, priorizarlas, registrar nuevas y consultar datos de líderes comunitarios. Otra ofrece los botones Registrar una nueva solicitud y Lista de Lideres. Dos tarjetas indican Total de Solicitudes: 8 y Solicitudes prioritarias: 3, ambas con un botón Ver. La interfaz despejada, de fondo claro y detalles azules, transmite un tono profesional y acogedor.](images/Pagina-inicio-conectado.png)
+
+
+### **Implementación de HttpClient, GETTERS y POST**###
+
+## **Mensaje de carga**##
+
+![Pantalla de ConectaBarrio mientras se cargan los datos. En la aplicación, el encabezado muestra el logotipo ConectaBarrio y la barra lateral azul oscuro contiene cinco botones de navegación con iconos. El área principal presenta el título Listado de Líderes, un campo con el texto Buscar Lider por nombre y un aviso azul que dice Cargando solicitudes desde el servidor. A la derecha, las herramientas de desarrollo del navegador muestran la pestaña Network, con solicitudes como posts y users, y varios estados 200; debajo, la consola dice Angular is running in development mode. El diseño es claro y ordenado, y la captura documenta la espera de datos y las solicitudes de red.](images/cargando.png)
+## **Interfaz de error y recuperación**##
+![Pantalla de ConectaBarrio en localhost:4200/solicitudes/1000. En el área principal aparece un aviso rojo con el texto No se encontró la solicitud bajo este ID. y, debajo a la izquierda, un botón que dice volver a listado. La barra lateral azul oscuro muestra cinco botones azules con iconos de inicio, solicitudes, nueva solicitud, líderes y regreso; arriba aparecen el logotipo ConectaBarrio y un icono de usuario. El entorno es una interfaz web clara y despejada, y el mensaje presenta el error de forma directa e informativa.](images/error-recuperacion.png)
+## **Network para una petición exitosa**##
+![ConectaBarrio muestra el formulario Registrar nueva solicitud en una vista responsive. Incluye los campos Asunto, Descripción y Líder..., y el botón Registrar Solicitud. La barra lateral dice Hola, ConectaBarrio y ofrece Inicio, Solicitudes, Nueva solicitud, Líderes y Cerrar sesión; en el encabezado aparecen ConectaBarrio y Solicitudes Prioritarias: 3. A la derecha, las herramientas de desarrollo del navegador están abiertas en Network y muestran dos solicitudes posts, con estados 201 y 204. El entorno de escritorio documenta un envío exitoso en una interfaz clara y ordenada, de tono profesional.](images/solicitud-network.png)
+
+

@@ -14,6 +14,9 @@ export class LideresListado {
   private liderService = inject(LideresService)
 
   lideres = this.liderService.lideres;
+  cargando = this.liderService.cargando;
+  error= this.liderService.error;
+  
 
   busquedaLider = signal('');
 

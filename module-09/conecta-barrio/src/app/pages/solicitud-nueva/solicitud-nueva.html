@@ -1,1 +1,16 @@
-<p>solicitud-nueva works!</p>
+
+
+<section class="registro">
+    <h2 class="registro-titulo"> Registrar nueva solicitud</h2>
+    <form class="registro-form" (submit)="registrarSolicitud($event,inputTitle,inputBody,selectUserId)">
+        <input #inputTitle type="text" placeholder="Asunto" required >
+        <input #inputBody id="body" type="text" placeholder="Descripción" required >
+        <select  #selectUserId required>
+            <option value="" disabled selected>Lider...</option>
+            @for (l of lideres(); track l.id) {
+                <option [value]="l.id">{{l.name}}</option>
+            }
+        </select>
+        <button type="submit" class="registro-boton"> Registrar Solicitud</button>
+    </form>
+</section>

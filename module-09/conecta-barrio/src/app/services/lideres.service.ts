@@ -1,4 +1,5 @@
-import { Injectable, signal,computed } from '@angular/core';
+import { Injectable, signal,computed, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 export interface Lider{
      id: number;
@@ -14,63 +15,44 @@ export interface Lider{
 })
 export class LideresService {
 
-  private listaLideres = signal<Lider[]>( [
-  {
-    "id": 1,
-    "name": "Laura Gómez",
-    "email": "laura.gomez@example.com",
-    "phone": "+57 3001234567",
-    "addressCity": "Bogotá",
-    "companyName": "TechSolutions"
-  },
-  {
-    "id": 2,
-    "name": "Carlos Pérez",
-    "email": "carlos.perez@example.com",
-    "phone": "+57 3109876543",
-    "addressCity": "Medellín",
-    "companyName": "Innovar S.A."
-  },
-  {
-    "id": 3,
-    "name": "Mariana Torres",
-    "email": "mariana.torres@example.com",
-    "phone": "+57 3154567890",
-    "addressCity": "Cali",
-    "companyName": "AgroColombia"
-  },
-  {
-    "id": 4,
-    "name": "Andrés Ramírez",
-    "email": "andres.ramirez@example.com",
-    "phone": "+57 3012349876",
-    "addressCity": "Barranquilla",
-    "companyName": "Marítima Ltda."
-  },
-  {
-    "id": 5,
-    "name": "Sofía Martínez",
-    "email": "sofia.martinez@example.com",
-    "phone": "+57 3206543210",
-    "addressCity": "Cartagena",
-    "companyName": "Turismo Caribe"
-  },
-  {
-    "id": 6,
-    "name": "Julián Herrera",
-    "email": "julian.herrera@example.com",
-    "phone": "+57 3187654321",
-    "addressCity": "Manizales",
-    "companyName": "Café Andino"
-  }
-]);
+  private http = inject(HttpClient)
+  private apiurl = 'https://jsonplaceholder.typicode.com/users'
 
-lideres = this.listaLideres.asReadonly();
+  private listaLideres = signal<Lider[]>( []);
+  private cargandoSignal = signal<boolean>(true);
+  private errorSignal = signal<string | null>(null);
+  private idsPrioritarios = signal<Set<number>>(new Set());
 
-
-private idsPrioritarios = signal<Set<number>>(new Set());
-
+lideres = this.listaLideres.asReadonly();  // Lee listaLideres
 totalPrioritarios = computed(() => this.idsPrioritarios().size);
+cargando =this.cargandoSignal.asReadonly();
+error = this.errorSignal.asReadonly();
+
+constructor(){
+  this.cargarLideres();
+}
+
+cargarLideres(){
+  this.cargandoSignal.set(true);
+  this.errorSignal.set(null);
+
+
+  this.http.get<Lider[]>(this.apiurl).subscribe({
+    next: (datos)=>{
+      this.listaLideres.set(datos);
+      this.cargandoSignal.set(false)
+    },
+    error: () =>{
+      this.errorSignal.set( 'No pudimos cargar el servidor de ConectaBarrio. Verifica que haya conexión a internet '
+      );
+      this.cargandoSignal.set(false);
+    }
+  })
+}
+
+
+
+
 
     esPrioritario(id:number):boolean{
         return this.idsPrioritarios().has(id);

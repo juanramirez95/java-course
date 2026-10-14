@@ -2,7 +2,6 @@ import { Component, signal,computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SolicitudCard } from '../../components/solicitud-card/solicitud-card';
 import { SolicitudesService } from '../../services/solicitudes.service';
-import { LideresService } from '../../services/lideres.service';
 
 @Component({
   selector: 'app-solicitudes-listado',
@@ -18,6 +17,8 @@ export class SolicitudesListado {
   
 
   solicitudes = this.solicitudesService.solicitudes;
+  cargando = this.solicitudesService.cargando;
+  error = this.solicitudesService.error;
   
 
   busqueda = signal('');  //este buscador pertenece solo a listado, filtrará en cada tecla, sin boton y sin recarga
@@ -41,4 +42,5 @@ export class SolicitudesListado {
   alternarPrioritario(id:number){
     return this.solicitudesService.alternarPrioritario(id);
   }
+
 }

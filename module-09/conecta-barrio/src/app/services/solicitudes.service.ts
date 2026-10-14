@@ -1,4 +1,6 @@
-import {Injectable, signal,computed,effect} from '@angular/core';
+import {Injectable, signal,computed,effect, inject} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { flushMicrotasks } from '@angular/core/testing';
 
 
 export interface Solicitud{
@@ -9,12 +11,11 @@ export interface Solicitud{
     fechaCreacion: Date;
 }
 
-export interface nuevaSolicitud{
-    id: number;
+export interface NuevaSolicitud{
+  
     userId: number;
-    tile: string;
+    title: string;
     body:string;
-    
     fechaCreacion: Date;
 }
 
@@ -22,83 +23,61 @@ export interface nuevaSolicitud{
     providedIn: 'root'
 })
 export class SolicitudesService{
-      private listaSolicitudes = signal<Solicitud[]>([
-          {
-        id: 1,
-        userId: 1,
-        title: "Apoyo escolarescolar",
-        body: "Asistir ala salida de buses al final de la jornada escolar",
-        fechaCreacion: new Date('2026-10-07')
-      },
-      {
-        id:2,
-        userId: 2,
-        title: "Jornada de limpieza",
-        body: "Organizar voluntarios para limpiar el parque central.",
-        fechaCreacion: new Date('2026-10-07')
-      },
-      {
-        id:3,
-        userId: 3,
-        title: "Reunión comunitaria",
-        body: "Convocar a los vecinos para discutir mejoras en seguridad",
-        fechaCreacion: new Date('2026-10-07')
-      },
-      {
-        id:4,
-        userId: 4,
-        title: "Huerta comunitaria",
-        body: "Coordinar la siembra de hortalizas en el lote comunal",
-        fechaCreacion: new Date('2026-10-07')
-      },
-      {
-        id:5,
-        userId: 1,
-        title: "Clases de deporte",
-        body: "Promover actividades deportivas para niños y jóvenes",
-        fechaCreacion: new Date('2026-10-07')
-      },
-      {
-        id:6,
-        userId: 6,
-        title: "Clases de deporte",
-        body: "Promover actividades deportivas para niños y jóvenes",
-        fechaCreacion: new Date('2026-10-07')
-      },
-      {
-        id:7,
-        userId: 3,
-        title: "Clases de deporte",
-        body: "Promover actividades deportivas para niños y jóvenes",
-        fechaCreacion: new Date('2026-10-07')
-      },
-      {
-        id:9,
-        userId: 1,
-        title: "Organizar sesion de recolecta de basura",
-        body: "Promover actividades deportivas para niños y jóvenes",
-        fechaCreacion: new Date('2026-10-07')
-      }  
-    ]);
-    
+      private http = inject(HttpClient)
+      private apiUrl = 'https://jsonplaceholder.typicode.com/posts'
+      
+      
+      
+      private listaSolicitudes = signal<Solicitud[]>([]);  // lista de solicitudes cargadas mediante la URL
       private idsPrioritarios = signal<Set<number>>(new Set());  // lista de ids que estan marcados como prioritarios.
+      private cargandoSignal = signal<boolean>(true);
+      private errorSignal = signal<string | null>(null);
 
-    
+
+      solicitudes = this.listaSolicitudes.asReadonly();  // lee listaSolicitudes que es un signal de la lista
+      asuntosMarcados = this.idsPrioritarios.asReadonly(); // lee la lista de los id que están marcados como prioritarios.
+      cargando = this.cargandoSignal.asReadonly(); // lee signal de cargandoSignal
+      error=this.errorSignal.asReadonly();// lee signal de errorSignal
+
+      totalPrioritarios = computed(() => this.idsPrioritarios().size); //devuelve la cantidad de solicitudes que estan marcadas como prioritarias
 
       constructor() {
-        effect(() => {
-          const idsActuales = [...this.idsPrioritarios()];
-          localStorage.setItem('redmanos-prioritarios', JSON.stringify(idsActuales));
-        });
+        this.cargarSolicitudes();
         }
 
-    solicitudes = this.listaSolicitudes.asReadonly();  // lee listaSolicitudes que es un signal de la lista
-    asuntosMarcados = this.idsPrioritarios.asReadonly(); // lee la lista de los id que están marcados como prioritarios.
+      // GET solicitudes
+      cargarSolicitudes(){
+        this.cargandoSignal.set(true);
+        this.errorSignal.set(null);
 
+        this.http.get<Solicitud[]>(this.apiUrl).subscribe({
+          next: (datos) => {
+            this.listaSolicitudes.set(datos);
+            this.cargandoSignal.set(false)
+          },
+          error: () => {
+            this.errorSignal.set(
+              'No pudimos cargar el servidor de ConectaBarrio. Verifica que haya conexión a internet '
+            );
+            this.cargandoSignal.set(false);
+          }
+        })
+      }
 
-    totalPrioritarios = computed(() => this.idsPrioritarios().size); //devuelve la cantidad de solicitudes que estan marcadas como prioritarias
+      // POST solicitudes
 
+      crearSolicitud(nueva:NuevaSolicitud) {
+        this.http.post<Solicitud>(this.apiUrl, nueva).subscribe({
+          next: (creada) =>{
+            this.listaSolicitudes.update(actuales => [...actuales, creada]);
+          },
+          error: () => {
+            this.errorSignal.set('No se pudo registrar la solicitud. Revisa los campos.')
+          }
+        })
+      }
 
+    
       esPrioritario(id:number):boolean{
           return this.idsPrioritarios().has(id);
     }
