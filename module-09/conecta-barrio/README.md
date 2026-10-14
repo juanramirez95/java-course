@@ -151,9 +151,9 @@ Los servicios exponen sus signals a las páginas solo para lectura mediante `asR
 
 | Estado | Qué se muestra |
 |:-------|:---------------|
-| Cargando | Mensaje "Cargando datos del Asunto" |
-| Error | Mensaje "No se pudo cargar los datos" |
-| Con datos, pero el id no aparece | "No existe una solicitud con ese id"|
+| Cargando | Mensaje "Cargando solicitudes desde el servidor" |
+| Error | Mensaje: "No pudimos cargar el servidor de ConectaBarrio. Verifica que haya conexión a internet" |
+| Con datos, pero el id no aparece | "No se encontró la solicitud bajo este ID"|
 
 
 ## Campos de Líder
