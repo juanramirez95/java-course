@@ -9,7 +9,7 @@ La organización social RedManos, apoya la participación de los lideres comunit
 Construir una aplicación web, desplegable en computador o celular que permita recibir,priorizar, gestionar y hacer consultas de solicitudes comunitarias y de los lideres comunitarios.
 
 
-### **- Usuario Principal:** Coordinador de la organización RedManos
+### **- Usuario Principal: Coordinador de la organización RedManos**
 
 ### **- Funciones impresindibles del MVP:**
 
@@ -56,7 +56,7 @@ Esto facilita el levantamiento de un backkend simulado con CRUDS no persistentes
 | `/solicitudes/:id` | Detalle de solicitud | Abrir un caso por su id: el id llega como texto desde la URL y se convierte a número. Si no existe, muestra un mensaje y un enlace para volver al listado. | Diferida. | Clic en una tarjeta del listado o de prioritarias. |
 | `/lideres` | Líderes | Consultar los líderes comunitarios y sus datos de contacto. | Diferida. | Menú lateral y botones de Inicio. |
 
-### Orden de las rutas
+### **Orden de las rutas**
 El orden de las rutas establecidas influye en el comportamiento del MVP. Las rutas "nueva" y "prioritarias" van antes de ":id"  con el fin de el Router tome la primera ruta con la que coincide. De esta manera se cumple la regla de ir de lo más específico a los más general.
 
 
@@ -104,7 +104,7 @@ El orden de las rutas establecidas influye en el comportamiento del MVP. Las rut
 ## **Decisiones sobre Signals, estado compartido e Input/Output.**
     ## Signals y computed
 
-### Signals
+### **Signals**
 
 | Ubicación | Signal | Contiene |
 |:----------|:-------|:---------|
@@ -121,7 +121,7 @@ El orden de las rutas establecidas influye en el comportamiento del MVP. Las rut
 
 Los servicios exponen sus signals a las páginas solo para lectura mediante `asReadonly()`: `solicitudes`, `asuntosMarcados`, `cargando` y `error` en `SolicitudesService`; `lideres`, `cargando` y `error` en `LideresService`.
 
-### Computed
+### **Computed**
 
 | Ubicación | Computed | Qué calcula |
 |:----------|:---------|:------------|
@@ -138,7 +138,7 @@ Los servicios exponen sus signals a las páginas solo para lectura mediante `asR
 ### **Matriz de Traducción**
 
 
-## Campos de la solicitud
+## **Campos de la solicitud**
 
 | Campo (API) | Etiqueta visible | Comportamiento |
 |:------------|:-------------|:---------------|
@@ -147,16 +147,16 @@ Los servicios exponen sus signals a las páginas solo para lectura mediante `asR
 | `userId` | Lider relacionado | userId es un campo de la solicitud y corresponde al id del líder comunitario. Se deriva del computed solicitud. Con ese valor se busca en la lista de líderes el líder relacionado y se muestra su nombre. Si la solicitud o el líder no existen, el valor queda vacío.  |
 | `id`     | Caso # | Maneja el estado de carga del caso (ver tabla siguiente). |
 
-## Estados de carga del caso
+## **Estados de carga del caso**
 
 | Estado | Qué se muestra |
 |:-------|:---------------|
 | Cargando | Mensaje "Cargando solicitudes desde el servidor" |
 | Error | Mensaje: "No pudimos cargar el servidor de ConectaBarrio. Verifica que haya conexión a internet" |
-| Con datos, pero el id no aparece | "No se encontró la solicitud bajo este ID"|
+| Con datos, pero el id no aparece | Mensaje "No se encontró la solicitud bajo este ID"|
 
 
-## Campos de Líder
+## **Campos de Líder**
 
 | Campo (API) | Etiqueta visible|Comportamiento |
 |:------------|:-------------|:---------------|
