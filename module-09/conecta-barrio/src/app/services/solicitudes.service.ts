@@ -1,6 +1,6 @@
 import {Injectable, signal,computed,effect, inject} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { flushMicrotasks } from '@angular/core/testing';
+
 
 
 export interface Solicitud{
@@ -43,7 +43,7 @@ export class SolicitudesService{
 
       constructor() {
         this.cargarSolicitudes();
-        }
+      }
 
       // GET solicitudes
       cargarSolicitudes(){
