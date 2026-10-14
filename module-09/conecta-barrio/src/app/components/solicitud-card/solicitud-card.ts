@@ -10,9 +10,7 @@ import { DatePipe, SlicePipe } from '@angular/common';
 })
 export class SolicitudCard {
   @Input() id=0;
-  @Input() userName ='';
   @Input()title ='';
-  @Input() prioridad='';
   @Input() body='';
   @Input() maxDescriptionLength: number | null = null;
   @Input() fechaCreacion: Date | string= '';

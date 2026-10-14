@@ -24,7 +24,6 @@ export class LideresService {
   private idsPrioritarios = signal<Set<number>>(new Set());
 
 lideres = this.listaLideres.asReadonly();  // Lee listaLideres
-totalPrioritarios = computed(() => this.idsPrioritarios().size);
 cargando =this.cargandoSignal.asReadonly();
 error = this.errorSignal.asReadonly();
 
@@ -49,10 +48,6 @@ cargarLideres(){
     }
   })
 }
-
-
-
-
 
     esPrioritario(id:number):boolean{
         return this.idsPrioritarios().has(id);
