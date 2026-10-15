@@ -217,7 +217,10 @@ Cuando el ancho de la pantalla es 500 o menos, el comportamiento de la barra cam
 
 
 
-## **URL de despliegue:**
+# **URL de despliegue:**  https://conecta-barrio-alpha.vercel.app/
+
+Debido a que el proyecto lo subí al repositorio en el que he desarrollado mis ejercicios de DevSenior, cree otro repositorio del cual se despliega el MVP. Este es el enlace de ese repositorio: https://github.com/juanramirez95/ConectaBarrio
+
 
 ## **Limitaciones conocidas y siguientes pasos**
 
