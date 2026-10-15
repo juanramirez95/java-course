@@ -257,3 +257,15 @@ Para el desarrollo de este proyecto se utilizaron dos inteligencias artificiales
 
 Hacer uso de la inteligencia artificial es una habilidad que hay que saber utilizar. Decidí hacer uso de la IA para consultar "el por que" de las cosas y cúal es el propósito de cada elemento en el proyecto. Tuve momentos en los que me frustré porque no sabía como implementar método, fue un reto el poder relacionar el nombre del lider con cada solicitud. Facilmente le pude haber pedido que desarrollara el código y lo pegaba en el MVP; pero decidí dejarme guíar, leer sus retroalimentaciones y despues de cada fallo, volver a hacerlo. La sastisfacción que tuve cuando lo logré no me la quita es nadie. Aprender a utilizar la IA es entender que uno es el que piensa y la guía a ella. 
 
+
+## Retrospectiva escrita
+ 
+ **-La decisión técnica que más ayudó a evitar duplicación:** El uso de componentes en diferentes páginas para no tener que estar duplicando datos, sino que estás se actualizan con cada modificación que haya. 
+
+**-El error que más le enseñó y cómo lo diagnosticó:** El error que más me enseño fue el orden en que se estructuran las urls en app.routes.ts. Al principio creía que con solo ponerlas en el archivo, el router iba a saber a que ruta viajar gracias a los links que se establecen, pero luego veía que cuando seleccionaba ver la lista de solicitudes prioritarias,estando ya marcadas, no me aparecía ninguna. hasta que comprendí que las rutas se deben de organizar de lo más específico a lo más general.
+
+**-Una parte que inicialmente no comprendía y ahora puede explicar:** signals y computed. Aunque aún siento que me falta entenderlo mucho más, fue el cuello de botella de mi proyecto, pasé  varios días tratando de entender como debía de usar los signals derivados para obtener los datos que nevesitba. Una situación fue la de poder relacionar el nombre de cada lider con las solicitudes y mostrarlo.
+
+**-Una función que decidió no construir para proteger el alcance:** decidí no construir lider-detalle, pues la página lideres-listado muestra la información de cada uno. Pueden buscar al lider relacionado buscandolo por su nombre en el buscador. 
+
+**-La siguiente mejora que haría con una semana adicional:** incluiría el endpoint POST /lideres para crear nuevos lideres y tambíen el endpoint DELETE /solicitudes/{id} para cerrar las solicitudes que ya han sido gestionadas. 
