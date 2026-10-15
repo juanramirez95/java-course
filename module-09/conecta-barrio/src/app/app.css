@@ -206,6 +206,45 @@ header{
   font-weight: 700;
 }
 
+@media (max-width: 768px) {
+    main,
+    main.menu-toggle {
+        width: 100%;
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .barra {
+        width: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .barra.menu-toggle {
+        width: 10rem;
+        padding: 1rem;
+    }
+
+    .barra.menu-toggle .barra-link {
+        padding-inline: 0;
+        white-space: normal;
+    }
+
+    .barra.menu-toggle .btn-primario {
+        width: 100%;
+        min-width: 0;
+        gap: 0.5rem;
+        padding: 0.75rem 0.5rem;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .barra.menu-toggle .btn-primario img {
+        width: 1.5rem;
+        flex-shrink: 0;
+    }
+}
+
 /* Responsive*/
 @media(max-width:500px){
     .barra{
@@ -219,10 +258,14 @@ header{
         
         width: 10rem;
         padding: 1rem;
-        .barra-link .icon-header{
-            display: none;
-        }
-        
+    }
+
+    .barra.menu-toggle .icon-header {
+        display: none;
+    }
+
+    .barra.menu-toggle .btn-primario {
+        justify-content: center;
     }
 
 }

@@ -76,3 +76,23 @@
   overflow-wrap: break-word;
   overflow-y: auto;
 }
+
+@media (max-width: 640px) {
+  .registro {
+    width: calc(100% - 2rem);
+    margin: 1.5rem auto;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .registro-form {
+    align-items: center;
+  }
+
+  .registro-form input,
+  .registro-form select,
+  .registro-form #body,
+  .registro-boton {
+    width: 100%;
+  }
+}

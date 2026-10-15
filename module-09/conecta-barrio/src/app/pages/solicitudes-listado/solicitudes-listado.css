@@ -138,4 +138,8 @@ app-solicitud-card {
     .grid .identificador {
         display: none;
     }
+
+    .grid {
+        justify-items: center;
+    }
 }

@@ -1,168 +1,300 @@
-/* Hero Section */
+/* =========================
+   HERO
+========================= */
+
 .hero {
     background-color: var(--color-superficie);
     color: var(--texto-principal);
-    padding: 4rem 2rem;
+    padding: clamp(2rem, 4vw, 4rem);
     text-align: center;
     border-radius: 8px;
+    border: 1px solid var(--color-bordes);
     margin: 2rem auto;
-    max-width: 800px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: min(100%, 800px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#tarjetas:hover{
-     transform: translateY(-3px);
-     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
 .hero-titulo {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    max-width: 800px;
-    margin: 2rem auto 1rem;
     color: var(--primario);
+    margin: 0 0 1rem;
     text-align: center;
 }
 
+.hero-texto,
 .hero-texxto {
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 2vw, 1.125rem);
     color: var(--texto-secundario);
+    line-height: 1.7;
     margin-bottom: 2rem;
-    line-height: 1.6;
 }
-.panel{
+
+/* =========================
+   PANEL GRID RESPONSIVE
+========================= */
+
+.panel {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.50rem;
-    max-width: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: min(100%, 1200px);
     margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-@media (max-width: 700px) {
-    .panel {
-        grid-template-columns: 1fr;
-    }
+/* =========================
+   TARJETAS
+========================= */
+
+#tarjetas,
+.indicador {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.instrucciones{
-    
-     display: flex;
+#tarjetas:hover,
+.indicador:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   INSTRUCCIONES
+========================= */
+
+.instrucciones {
+    display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
     background-color: var(--color-superficie);
     color: var(--texto-principal);
-    padding: 4rem 2rem;
-    text-align: left;
-    line-height: 1.5rem;
+
+    padding: clamp(1.5rem, 4vw, 4rem);
+    line-height: 1.7;
+
     border-radius: 8px;
+    border: 1px solid var(--color-bordes);
+
     margin: 2rem auto;
-    max-width: 32ch;
+    width: min(100%, 600px);
+
     overflow-wrap: break-word;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    word-break: break-word;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* =========================
+   INDICADORES
+========================= */
 
-.indicadores-solicitudes{
-     background-color: var(--color-superficie);
+.indicadores-solicitudes {
+    background-color: var(--color-superficie);
     color: var(--texto-principal);
-    padding: 4rem 2rem;
+
+    padding: clamp(2rem, 4vw, 4rem);
     text-align: center;
+
     border-radius: 8px;
+    border: 1px solid var(--color-bordes);
+
     margin: 2rem auto;
-    max-width: 500px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: min(100%, 500px);
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.indicadores-solicitudes .indicador{
-  background-color: var(--color-superficie);
-  border: 1px solid var(---color-bordes);
-  border-radius: 8px;
-  padding: 1rem 1.5rem;
-  margin: 1rem;
-  flex: 1;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+.indicadores-solicitudes .indicador {
+    background-color: var(--color-superficie);
 
- .ver-solicitud {
-  display: inline-block;
-  background-color: transparent;
-  color: var(--primario);
-  border: 1px solid var(--primario);
-  padding: 0.25rem 0.75rem;
-  border-radius: 6px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  cursor: pointer;
-}
+    border: 1px solid var(--color-bordes);
+    border-radius: 8px;
 
-.ver-solicitud:hover {
-  background-color: var(--primario);
-  color: #ffffff;
-  text-decoration: none;
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+
+    text-align: center;
+    flex: 1;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .indicadores-solicitudes .indicador-titulo {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--texto-secundario);
-  margin-bottom: 0.5rem;
-}
-.indicadores-solicitudes .indicador:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-.indicadores-solicitudes .indicador-valor {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--primario);
-  margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--texto-secundario);
+    margin-bottom: 0.5rem;
 }
 
-.acciones{
-     display: flex;
+.indicadores-solicitudes .indicador-valor {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primario);
+    margin: 0;
+}
+
+/* =========================
+   ACCIONES
+========================= */
+
+.acciones {
+    display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
     background-color: var(--color-superficie);
     color: var(--texto-principal);
-    padding: 4rem 2rem;
+
+    padding: clamp(2rem, 4vw, 4rem);
     text-align: center;
+
     border-radius: 8px;
+    border: 1px solid var(--color-bordes);
+
     margin: 2rem auto;
-    max-width: 500px;
-    max-height: 300px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: min(100%, 500px);
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* =========================
+   INDICADOR PRIORITARIO
+========================= */
 
-
-.indicador-prioritario{
-    border: 2px solid purple;
-     background-color: var(--color-superficie);
+.indicador-prioritario {
+    background-color: var(--color-superficie);
     color: var(--texto-principal);
-    padding: 4rem 2rem;
+
+    padding: clamp(2rem, 4vw, 4rem);
     text-align: center;
+
     border-radius: 8px;
+    border: 2px solid purple;
+
     margin: 2rem auto;
-    max-width: 500px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: min(100%, 500px);
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Botón dentro del hero */
+/* =========================
+   BOTONES Y ENLACES
+========================= */
+
 .acciones .btn-primario {
     background-color: var(--primario);
-    color: #ffffff;
+    color: #fff;
+
     border: none;
-    padding: 0.75rem 1.5rem;
     border-radius: 6px;
+
+    padding: 0.75rem 1.5rem;
     font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+
     text-decoration: none;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+
     display: block;
 }
 
 .acciones .btn-primario:hover {
     background-color: var(--primario-hover);
+}
+
+.ver-solicitud {
+    display: inline-block;
+
+    background-color: transparent;
+    color: var(--primario);
+
+    border: 1px solid var(--primario);
+    border-radius: 6px;
+
+    padding: 0.5rem 1rem;
+
+    font-weight: 500;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.ver-solicitud:hover {
+    background-color: var(--primario);
+    color: #fff;
+}
+
+/* =========================
+   ACCESIBILIDAD
+========================= */
+
+.btn-primario:focus-visible,
+.ver-solicitud:focus-visible,
+#tarjetas:focus-visible,
+.indicador:focus-visible {
+    outline: 3px solid var(--primario);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+
+    .hero-texto,
+    .hero-texxto,
+    .instrucciones {
+        text-align: center;
+    }
+
+    .acciones .btn-primario {
+        text-align: center;
+    }
+}
+
+/* =========================
+   REDUCCIÓN DE MOVIMIENTO
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================
+   MÓVILES PEQUEÑOS
+========================= */
+
+@media (max-width: 480px) {
+
+    .hero,
+    .instrucciones,
+    .acciones,
+    .indicadores-solicitudes,
+    .indicador-prioritario {
+        margin-inline: 1rem;
+    }
+
+    .indicadores-solicitudes .indicador {
+        margin: 0.5rem 0;
+    }
+
+    .hero,
+    .instrucciones,
+    .acciones,
+    .indicadores-solicitudes,
+    .indicador-prioritario {
+        width: calc(100% - 2rem);
+    }
 }

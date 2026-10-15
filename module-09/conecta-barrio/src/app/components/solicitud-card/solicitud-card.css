@@ -95,16 +95,26 @@
 @media (max-width: 680px) {
   :host(.solicitud-card-listado) .card,
   :host(.solicitud-card-prioritario) .card {
-    grid-template-columns: 3rem minmax(0, 1fr) auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 0.65rem;
     padding: 0.85rem;
+    text-align: center;
   }
 
-  :host(.solicitud-card-prioritario) .card {
-    grid-template-areas:
-      "id title priority"
-      "body body body"
-      ". date date";
+  :host(.solicitud-card-listado) .card h4,
+  :host(.solicitud-card-listado) .card h2,
+  :host(.solicitud-card-listado) .card p,
+  :host(.solicitud-card-prioritario) .card h4,
+  :host(.solicitud-card-prioritario) .card h2,
+  :host(.solicitud-card-prioritario) .card p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  :host(.solicitud-card-prioritario) .card > p {
+    width: 100%;
   }
 
   :host(.solicitud-card-listado) .card h2 {
@@ -116,11 +126,11 @@
   }
 
   :host(.solicitud-card-listado) .card p {
-    grid-column: 1 / -1;
+    white-space: normal;
   }
 
   :host(.solicitud-card-listado) .card .btn-secundario {
-    justify-self: start;
+    align-self: center;
   }
 }
 

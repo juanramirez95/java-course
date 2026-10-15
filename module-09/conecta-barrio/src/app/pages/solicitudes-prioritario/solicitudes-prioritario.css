@@ -61,3 +61,25 @@
   color: var(--status-urgent);
   margin-top: 2rem;
 }
+
+@media (max-width: 900px) {
+  .identificador {
+    grid-template-columns: 3rem minmax(8rem, 1fr) minmax(12rem, 2fr) 6rem;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .listado-prioritarias {
+    align-items: center;
+  }
+
+  .identificador {
+    display: none;
+  }
+
+  .sin-resultado {
+    margin-inline: auto;
+    text-align: center;
+  }
+}

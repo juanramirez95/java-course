@@ -1,138 +1,309 @@
-/* Contenedor principal del detalle */
+/* =========================
+   CONTENEDOR DETALLE
+========================= */
+
 .detalle {
-  background-color: var(--color-superficie);
-  border: 1px solid var(---color-bordes);
-  border-radius: 8px;
-  
-  width: 100%;
-  max-width: 960px;
-  min-height: 140px;
-  margin: 2rem auto;
-  padding: 1.5rem 2rem;
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    background-color: var(--color-superficie);
+
+    border: 1px solid var(--color-bordes);
+    border-radius: 8px;
+
+    width: min(100%, 960px);
+    min-height: 140px;
+
+    margin: 2rem auto;
+    padding: clamp(1.25rem, 3vw, 2rem);
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
 }
 
-/* --- Columna izquierda (Asunto y Descripción) --- */
+.detalle:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+
 .Encabezado {
-  flex: 1;
-  min-width: 0; /* evita que el texto largo empuje la columna derecha */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
 }
 
 .detalle-asunto {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.5rem;
-  color: var(--primario);
-  font-weight: 700;
-  line-height: 1.3;
-  max-width: 50ch;
+    margin: 0;
+
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+
+    color: var(--primario);
+
+    line-height: 1.3;
+    overflow-wrap: break-word;
 }
 
 .detalle-descripcion {
-  margin: 0;
-  color: var(--texto-secundario);
-  line-height: 2.5;
-  font-size: 1rem;
-  max-width: 80ch;
+    margin: 0;
+
+    color: var(--texto-secundario);
+
+    font-size: 1rem;
+    line-height: 1.7;
+
+    overflow-wrap: break-word;
 }
 
-/* --- Columna derecha (Datos extra + botón) --- */
+/* =========================
+   COLUMNA DERECHA
+========================= */
+
 .body {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 1rem;
-  min-width: 200px;
-  flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: 1rem;
+
+    min-width: 220px;
+    flex-shrink: 0;
 }
 
 .datos-extra {
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    text-align: right;
 }
 
 .detalle-lider,
 .detalle-fecha {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--texto-secundario);
+    margin: 0;
+
+    font-size: 0.95rem;
+    color: var(--texto-secundario);
 }
 
-/* Botón secundario coherente */
+/* =========================
+   BOTÓN SECUNDARIO
+========================= */
+
 .body .btn-secundario {
-  display: inline-block;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  border: 1px solid var(---color-bordes);
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  color: var(--texto-principal);
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    padding: 0.6rem 1rem;
+
+    border: 1px solid var(--color-bordes);
+    border-radius: 6px;
+
+    background-color: transparent;
+    color: var(--texto-principal);
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .body .btn-secundario:hover {
-  background-color: var(--status-process-bg);
+    background-color: var(--status-process-bg);
+    transform: translateY(-2px);
 }
 
-.body .btn-secundario .prioridad.activo{
-  color: #ff3700;
-  transform: scale(1.15);
+.body .btn-secundario:focus-visible {
+    outline: 3px solid var(--primario);
+    outline-offset: 3px;
 }
+
+/* =========================
+   PRIORIDAD
+========================= */
+
+.prioridad.activo {
+    color: #ff3700;
+    transform: scale(1.15);
+}
+
+/* =========================
+   MENSAJES DE ESTADO
+========================= */
+
+.sin-resultado,
+.estado-error {
+    width: min(100%, 600px);
+
+    margin: 2rem auto;
+    padding: 1rem 1.25rem;
+
+    text-align: center;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   SIN RESULTADOS
+========================= */
 
 .sin-resultado {
-  background-color: var(--status-urgent-bg);
-  border: 1px solid var(--status-urgent);
-  border-radius: 6px;
-  padding: 1rem 1.25rem;
-  margin: 2rem auto;
-  max-width: 600px;
-  
-  text-align: center;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--status-urgent);
-  
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background-color: var(--status-urgent-bg);
+    border: 1px solid var(--status-urgent);
+
+    color: var(--status-urgent);
+
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-#boton-error:hover{
-  
-  background-color: var(--status-process-bg);
+/* =========================
+   ERROR
+========================= */
+
+.estado-error {
+    background-color: var(--status-urgent-bg);
+    border: 1px solid var(--status-urgent);
+
+    color: var(--status-urgent);
+
+    font-size: 1rem;
+    font-weight: 600;
 }
 
+/* =========================
+   BOTÓN DE ERROR
+========================= */
 
+#boton-error {
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
 
+#boton-error:hover {
+    background-color: var(--status-process-bg);
+    transform: translateY(-2px);
+}
 
+#boton-error:focus-visible {
+    outline: 3px solid var(--primario);
+    outline-offset: 3px;
+}
 
-/* --- Responsive --- */
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .detalle {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .Encabezado {
+        align-items: center;
+        width: 100%;
+    }
+
+    .body {
+        align-items: center;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .datos-extra {
+        text-align: center;
+    }
+}
+
+/* =========================
+   MÓVILES
+========================= */
+
 @media (max-width: 640px) {
-  .detalle {
-    flex-direction: column;
-    align-items: stretch;
-    min-height: auto;
-    padding: 1.25rem;
-    gap: 1.25rem;
-  }
 
-  .body {
-    align-items: flex-start;
-    min-width: 100%;
-  }
+    .detalle {
+        align-items: center;
 
-  .datos-extra {
-    text-align: left;
-  }
+        min-height: auto;
+
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+
+    .body {
+        align-items: center;
+        min-width: 0;
+    }
+
+    .datos-extra {
+        text-align: center;
+    }
+
+    .btn-secundario {
+        width: 100%;
+    }
+}
+
+/* =========================
+   MÓVILES PEQUEÑOS
+========================= */
+
+@media (max-width: 480px) {
+
+    .detalle {
+        margin-inline: 1rem;
+    }
+
+    .detalle-asunto {
+        font-size: 1.25rem;
+    }
+
+    .detalle-descripcion {
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================
+   REDUCCIÓN DE MOVIMIENTO
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }
